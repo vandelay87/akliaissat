@@ -2,7 +2,6 @@
 const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const nodeSassMagicImporter = require('node-sass-magic-importer');
 
 const env = process.env.NODE_ENV;
 const sourceMap = env === 'development';
@@ -22,7 +21,7 @@ const config = {
   },
   devtool: sourceMap ? 'cheap-module-eval-source-map' : undefined,
   resolve: {
-    extensions: ['.js', '.vue', '.json', '.scss'],
+    extensions: ['.js', '.vue', '.json', 'css', '.scss'],
     alias: {
       '@': path.join(__dirname, 'src'),
       vue$: 'vue/dist/vue.esm.js',
@@ -45,15 +44,8 @@ const config = {
           'vue-style-loader',
           'css-loader',
           {
-            loader: 'css-loader',
-            options: {
-              sourceMap,
-            },
-          },
-          {
             loader: 'sass-loader',
             options: {
-              importer: nodeSassMagicImporter(),
               sourceMap,
             },
           },
