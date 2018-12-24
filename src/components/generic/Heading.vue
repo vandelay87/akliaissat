@@ -6,13 +6,31 @@
     <h5 v-else-if="size == 5">{{ title }}</h5>
     <h6 v-else-if="size == 6">{{ title }}</h6>
     <h1 v-else>{{ title }}</h1>
-
+    <p v-if="subtitle">{{ subtitle }}</p>
   </header>
 </template>
 
 <script>
   export default {
     name: 'Heading',
-    props: ['title', 'size'],
+    props: ['title', 'size', 'subtitle'],
   }
 </script>
+
+<style lang="scss" scoped>
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2.25em;
+  }
+
+  h3 {
+    font-size: 1.75em;
+  }
+
+  h4 {
+    font-size: 1.125em;
+  }
+</style>

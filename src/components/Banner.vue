@@ -1,6 +1,6 @@
 <template>
   <article>
-    <Heading title="akliaissat" />
+    <Heading title="akliaissat" subtitle="I make websites." />
   </article>
 </template>
 

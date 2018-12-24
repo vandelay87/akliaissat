@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <Banner />
+    <div class="wrapper">
+      <Banner />
+    </div>
   </div>
 </template>
 
@@ -20,5 +22,11 @@
 
   #app {
     font-family: 'Open Sans', sans-serif;
+
+    .wrapper {
+      width: 100%;
+      max-width: 61.250em;
+      margin: auto;
+    }
   }
 </style>
