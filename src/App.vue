@@ -1,16 +1,24 @@
 <template>
   <div id="app">
-    <Heading />
+    <Banner />
   </div>
 </template>
 
 <script>
-  import Heading from './components/Heading'
+  import Banner from './components/Banner'
 
   export default {
     name: 'App',
     components: {
-      Heading
+      Banner
     }
   }
 </script>
+
+<style lang="scss">
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+  #app {
+    font-family: 'Open Sans', sans-serif;
+  }
+</style>
