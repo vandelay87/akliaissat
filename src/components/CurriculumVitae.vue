@@ -183,15 +183,11 @@
       }
 
       @include breakpoint(tablet) {
-        &.col3 {
-          .subBlock {
-            flex: 0 0 33%;
-          }
-        }
-
         &.col2 {
           .subBlock {
-            flex: 0 50%;
+            &:nth-of-type(2) {
+              flex: 2;
+            }
           }
         }
       }
