@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header :class="align">
     <h2 v-if="size == 2">{{ title }}</h2>
     <h3 v-else-if="size == 3">{{ title }}</h3>
     <h4 v-else-if="size == 4">{{ title }}</h4>
@@ -13,11 +13,23 @@
 <script>
   export default {
     name: 'Heading',
-    props: ['title', 'size', 'subtitle'],
+    props: ['title', 'size', 'subtitle', 'align'],
   }
 </script>
 
 <style lang="scss" scoped>
+  .left {
+    text-align: left;
+  }
+
+  .right {
+    text-align: right;
+  }
+
+  .centre {
+    text-align: center;
+  }
+
   h1 {
     font-size: 3em;
   }
