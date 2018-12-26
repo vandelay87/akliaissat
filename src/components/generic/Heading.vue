@@ -6,7 +6,7 @@
     <h5 v-else-if="size === 5">{{ title }}</h5>
     <h6 v-else-if="size === 6">{{ title }}</h6>
     <h1 v-else>{{ title }}</h1>
-    <p v-if="subtitle">{{ subtitle }}</p>
+    <p v-if="subtitle" class="subtitle">{{ subtitle }}</p>
   </header>
 </template>
 
@@ -56,5 +56,10 @@
 
   h4 {
     font-size: 1.125em;
+  }
+
+  .subtitle {
+    font-size: 1em;
+    font-weight: 600;
   }
 </style>

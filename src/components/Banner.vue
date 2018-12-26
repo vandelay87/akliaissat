@@ -27,5 +27,9 @@
     @include breakpoint(tablet) {
       padding: 3em;
     }
+
+    @include breakpoint(desktop) {
+      padding: 6em;
+    }
   }
 </style>
