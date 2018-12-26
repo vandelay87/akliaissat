@@ -6,7 +6,7 @@ describe('Button.vue', () => {
     const wrapper = mount(Button, {
       propsData: {
         value: 'click me',
-        onClick: jest.fn(),
+        onClick: () => {},
       },
     });
 
