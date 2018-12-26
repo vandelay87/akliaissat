@@ -35,23 +35,24 @@
     font-size: 1.25em;
     font-weight: 600;
     cursor: pointer;
+    transition: all .3s;
 
     &.twitter, &.github {
-      background: transparent;
+      background-color: transparent;
       border: 5px solid $white;
       color: $white;
     }
 
     &.twitter {
       &:hover, &:active, &:focus {
-        background: $white;
+        background-color: $white;
         color: $twitter;
       }
     }
 
     &.github {
       &:hover, &:active, &:focus {
-        background: $white;
+        background-color: $white;
         color: $github;
       }
     }

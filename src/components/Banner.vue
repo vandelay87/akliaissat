@@ -20,7 +20,7 @@
   @import '../assets/breakpoints.scss';
 
   .banner {
-    background: $darkGray;
+    background-color: $darkGray;
     color: $white;
     padding: 3em 1em;
 

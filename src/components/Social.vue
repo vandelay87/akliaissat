@@ -71,11 +71,11 @@
     }
 
     .twitter {
-      background: $twitter;
+      background-color: $twitter;
     }
 
     .github {
-      background: $github;
+      background-color: $github;
     }
   }
 </style>
