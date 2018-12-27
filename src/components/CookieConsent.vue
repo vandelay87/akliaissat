@@ -1,15 +1,17 @@
 <template>
-  <article v-if="isVisible" class="cookieBanner">
-    <section class="content">
-      <div class="block">
-        <Heading title="This website uses cookies" subtitle="Is that cool? I use them to help the website run better. You can find more information on the privacy page." :size=3 />
-      </div>
-      <div class="block buttons">
-        <Button value="Cool" :onClick="createCookie.bind(null, cookie.name)" />
-        <Button value="Not Cool" :onClick="hideBanner" />
-      </div>
-    </section>
-  </article>
+  <transition name="slide" appear>
+    <article v-if="isVisible" class="cookieBanner">
+      <section class="content">
+        <div class="block">
+          <Heading title="This website uses cookies" subtitle="Is that cool? I use them to help the website run better. You can find more information on the privacy page." :size=3 />
+        </div>
+        <div class="block buttons">
+          <Button value="Cool" :onClick="createCookie.bind(null, cookie.name)" />
+          <Button value="Not Cool" :onClick="hideBanner" />
+        </div>
+      </section>
+    </article>
+  </transition>
 </template>
 
 <script>
@@ -60,6 +62,7 @@
 
   .cookieBanner {
     position: fixed;
+    // transform: translateY(0px);
     bottom: 0;
     width: 100%;
     padding: 0 0 0.750em;
@@ -94,5 +97,20 @@
         }
       }
     }
+  }
+
+  .slide-enter-active, .slide-leave-active {
+    // transition: transform .3s;
+    transition: bottom .3s;
+  }
+
+  .slide-enter-to, .slide-leave {
+    // transform: translateY(-100%);
+    bottom: 0;
+  }
+
+   .slide-enter, .slide-leave-to {
+    // transform: translateY(100%);
+    bottom: -220px;
   }
 </style>

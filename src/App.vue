@@ -5,7 +5,6 @@
       <CurriculumVitae />
       <Social />
       <CookieConsent :cookie="cookie" />
-      <p v-if="cookie.consent === true">showing cookie consent banner...</p>
     </div>
   </div>
 </template>
@@ -27,7 +26,7 @@
     data() {
       return {
         cookie: {
-          consent: false,
+          consent: true,
           name: 'cookie_consent'
         }
       }
@@ -38,10 +37,13 @@
     methods: {
       checkCookieConsent: function() {
         const cookies = document.cookie.split(';');
+        let cookieExists = false;
 
         for (var i = 0; i < cookies.length; i++) {
-          if (cookies[i].trim() === this.cookie.name + '=true') this.cookie.consent = true;
+          if (cookies[i].trim() === this.cookie.name + '=true') cookieExists = true;
         }
+
+        if (!cookieExists) this.cookie.consent = false;
       }
     }
   }
@@ -54,7 +56,7 @@
     margin: 0;
 
     #app {
-    font-family: 'Open Sans', sans-serif;
+      font-family: 'Open Sans', sans-serif;
     }
   }
 </style>
