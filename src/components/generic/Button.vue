@@ -31,13 +31,22 @@
   .button {
     display: block;
     margin: auto;
-    padding: 2em;
+    padding: 1em;
     font-size: 1.25em;
     font-weight: 600;
+    background-color: $blue;
+    color: $white;
+    border: 5px solid $white;
     cursor: pointer;
     transition: all .3s;
 
+    &:hover, &:active, &:focus {
+      background-color: $white;
+      color: $blue;
+    }
+
     &.twitter, &.github {
+      padding: 2em;
       background-color: transparent;
       border: 5px solid $white;
       color: $white;

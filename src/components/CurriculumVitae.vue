@@ -132,8 +132,8 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../assets/breakpoints.scss';
   @import '../assets/global.scss';
+  @import '../assets/breakpoints.scss';
   @import '../assets/variables.scss';
 
   .cv {
