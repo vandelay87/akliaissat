@@ -38,7 +38,6 @@
     methods: {
       checkCookieConsent: function() {
         const cookies = document.cookie.split(';');
-        let checkCookie = false;
 
         for (var i = 0; i < cookies.length; i++) {
           if (cookies[i].trim() === this.cookie.name + '=true') this.cookie.consent = true;

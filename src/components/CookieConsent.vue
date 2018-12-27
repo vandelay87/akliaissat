@@ -1,12 +1,12 @@
 <template>
-  <article v-if="cookie.consent === false" class="cookieBanner">
+  <article v-if="isVisible" class="cookieBanner">
     <section class="content">
       <div class="block">
         <Heading title="This website uses cookies" subtitle="Is that cool? I use them to help the website run better. You can find more information on the privacy page." :size=3 />
       </div>
       <div class="block buttons">
         <Button value="Cool" :onClick="createCookie.bind(null, cookie.name)" />
-        <Button value="Not Cool" :onClick="() => {}" />
+        <Button value="Not Cool" :onClick="hideBanner" />
       </div>
     </section>
   </article>
@@ -28,13 +28,26 @@
         required: true,
       }
     },
+    data() {
+      return {
+        visible: true,
+      }
+    },
+    computed: {
+      isVisible() {
+        return (this.cookie.consent || !this.visible) ? false : true;
+      }
+    },
     methods: {
       createCookie: function(name) {
-        console.log('creating ' + name + ' cookie...');
         const now = new Date();
 
         now.setMonth( now.getMonth() + 12 );
         document.cookie = name + "=true; expires=" + now.toUTCString();
+        this.cookie.consent = true;
+      },
+      hideBanner: function() {
+        this.visible = false;
       }
     },
   }
