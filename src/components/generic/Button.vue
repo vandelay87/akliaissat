@@ -1,5 +1,5 @@
 <template>
-  <button @click='onClick' :class="customStyle" class="button">
+  <button @click='onClick' :class="customClass" class="button">
     {{ value }}
   </button>
 </template>
@@ -16,7 +16,7 @@
         type: Function,
         required: true,
       },
-      customStyle: {
+      customClass: {
         validator: function (value) {
           return ['twitter', 'github'].indexOf(value) !== -1
         }

@@ -4,7 +4,7 @@
     <div class="block">
       <section v-for="(social, index) in accounts" :key="social.key" v-bind:class="social.name" class="subBlock">
         <Heading :title="social.name" align="centre" :size=2  />
-        <Button :value="social.account" :onClick="(event) => { link(event, index) }" :customStyle="social.name" />
+        <Button :value="social.account" :onClick="(event) => { link(event, index) }" :customClass="social.name" />
       </section>
     </div>
   </article>
