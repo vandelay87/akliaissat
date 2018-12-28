@@ -93,7 +93,7 @@
             key: 4,
             company: 'Whitbread',
             role: 'Front End Web Developer, October 2016 - December 2018',
-            description: 'My first exposure to how a large company operates under agile methodologies. I began working on maintaining Whitbread\'s restaurant brands (Beefeater, Brewersfayre, Bar and Block). After a year, I then moved onto the newly founded Costa web team.'
+            description: 'My first exposure to how a large company operates under agile methodologies. I began working on maintaining Whitbread\'s restaurant brands (Beefeater, Brewersfayre, Bar and Block). After a year, I then moved to the newly founded Costa web team.'
           },
           {
             key: 3,

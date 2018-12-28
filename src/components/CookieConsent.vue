@@ -2,8 +2,12 @@
   <transition name="slide" appear>
     <article v-if="isVisible" class="cookieBanner">
       <section class="content">
-        <div class="block">
-          <Heading title="This website uses cookies" subtitle="Is that cool? I use them to help the website run better. You can find more information on the privacy page." :size=3 />
+        <div class="block header">
+          <Heading
+            :title=title
+            :subtitle=subtitle
+            :size=3
+          />
         </div>
         <div class="block buttons">
           <Button value="Cool" :onClick="createCookie.bind(null, cookie.name)" />
@@ -33,6 +37,8 @@
     data() {
       return {
         visible: true,
+        title: "This website uses cookies",
+        subtitle: "Is that cool? I use them to help the website run better. You can find more information on the privacy page.",
       }
     },
     computed: {
@@ -62,7 +68,6 @@
 
   .cookieBanner {
     position: fixed;
-    // transform: translateY(0px);
     bottom: 0;
     width: 100%;
     padding: 0 0 0.750em;
@@ -83,9 +88,8 @@
       .block {
         flex: 1;
         width: 100%;
-        padding: 1em 1em 4em;
-        box-sizing: border-box;
         padding: 1em;
+        box-sizing: border-box;
 
         &.buttons {
           text-align: center;
@@ -95,22 +99,42 @@
             margin: 0 0.375em;
           }
         }
+
+        &.header {
+          @include breakpoint(tablet) {
+            padding: 1em 1em 1em 2.5em;
+          }
+
+          @include breakpoint(tabletLarge) {
+            padding: 1em 1em 1em 3em;
+          }
+
+          @include breakpoint(desktop) {
+            padding: 1em 1em 1em 4em;
+          }
+        }
       }
     }
   }
 
   .slide-enter-active, .slide-leave-active {
-    // transition: transform .3s;
     transition: bottom .3s;
   }
 
   .slide-enter-to, .slide-leave {
-    // transform: translateY(-100%);
     bottom: 0;
+    transition-delay: 3s;
   }
 
-   .slide-enter, .slide-leave-to {
-    // transform: translateY(100%);
-    bottom: -220px;
+  .slide-enter, .slide-leave-to {
+    bottom: -22.5em;
+
+    @include breakpoint(tablet) {
+      bottom: -16.25em;
+    }
+
+    @include breakpoint(tabletLarge) {
+      bottom: -12.5em
+    }
   }
 </style>

@@ -38,9 +38,9 @@
         ]
       }
     },
-    methods: {
+    computed: {
       link(event, index) {
-        window.open(this.accounts[index].address, "_blank")
+        return window.open(this.accounts[index].address, "_blank")
       }
     }
   }
