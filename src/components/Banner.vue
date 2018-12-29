@@ -28,6 +28,10 @@
       padding: 3em;
     }
 
+    @include breakpoint(tabletLarge) {
+      padding: 4em;
+    }
+
     @include breakpoint(desktop) {
       padding: 6em;
     }

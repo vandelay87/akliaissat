@@ -101,8 +101,10 @@
         }
 
         &.header {
+          padding: 1em 2em;
+
           @include breakpoint(tablet) {
-            padding: 1em 1em 1em 2.5em;
+            padding: 1em 1em 1em 2em;
           }
 
           @include breakpoint(tabletLarge) {
@@ -130,7 +132,7 @@
     bottom: -22.5em;
 
     @include breakpoint(tablet) {
-      bottom: -16.25em;
+      bottom: -14.375em;
     }
 
     @include breakpoint(tabletLarge) {
