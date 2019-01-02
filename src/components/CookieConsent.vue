@@ -86,10 +86,13 @@
       }
 
       .block {
-        flex: 1;
         width: 100%;
         padding: 1em;
         box-sizing: border-box;
+
+        @include breakpoint(tablet) {
+          flex: 1;
+        }
 
         &.buttons {
           text-align: center;

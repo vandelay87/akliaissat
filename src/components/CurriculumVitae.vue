@@ -157,13 +157,14 @@
       }
 
       .subBlock {
-        flex: 1;
         width: 100%;
         padding: 1em;
         box-sizing: border-box;
         padding: 0 1em;
 
         @include breakpoint(tablet) {
+          flex: 1;
+
           .list {
             padding-bottom: 1.750em;
           }

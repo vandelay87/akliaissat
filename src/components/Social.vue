@@ -2,9 +2,9 @@
   <article class="social">
     <Heading title="Follow Me" align="centre" />
     <div class="block">
-      <section v-for="(social, index) in accounts" :key="social.key" v-bind:class="social.name" class="subBlock">
+      <section v-for="social in accounts" :key="social.key" v-bind:class="social.name" class="subBlock">
         <Heading :title="social.name" align="centre" :size=2  />
-        <Button :value="social.account" :onClick="(event) => { link(event, index) }" :customClass="social.name" />
+        <Link :text="social.account" :link="social.address" :customClass="social.name" />
       </section>
     </div>
   </article>
@@ -12,13 +12,13 @@
 
 <script>
   import Heading from './generic/Heading'
-  import Button from './generic/Button'
+  import Link from './generic/Link'
 
   export default {
     name: 'Social',
     components: {
       Heading,
-      Button
+      Link
     },
     data() {
       return {
@@ -38,11 +38,6 @@
         ]
       }
     },
-    computed: {
-      link(event, index) {
-        return window.open(this.accounts[index].address, "_blank")
-      }
-    }
   }
 </script>
 
@@ -62,11 +57,14 @@
       }
 
       .subBlock {
-        flex: 1;
         width: 100%;
         padding: 1em 1em 4em;
         box-sizing: border-box;
         color: $white;
+
+        @include breakpoint(tablet) {
+          flex: 1;
+        }
       }
     }
 
