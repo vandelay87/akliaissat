@@ -5,6 +5,7 @@
       <CurriculumVitae />
       <Social />
       <CookieConsent :cookie="cookie" />
+      <Footer />
     </div>
   </div>
 </template>
@@ -14,6 +15,7 @@
   import CurriculumVitae from './components/CurriculumVitae'
   import Social from './components/Social'
   import CookieConsent from './components/CookieConsent'
+  import Footer from './components/Footer'
 
   export default {
     name: 'App',
@@ -22,6 +24,7 @@
       CurriculumVitae,
       Social,
       CookieConsent,
+      Footer,
     },
     data() {
       return {
