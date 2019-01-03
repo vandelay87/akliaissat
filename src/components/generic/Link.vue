@@ -1,14 +1,17 @@
 <template>
-  <a :href="link" :class="customClass" class="link" target="_blank">
+  <a v-if="external === true" :href="path" :class="customClass" class="link" target="_blank">
     {{ text }}
   </a>
+  <router-link v-else :to="path" :class="customClass" class="link">
+    {{ text }}
+  </router-link>
 </template>
 
 <script>
   export default {
     name: 'Link',
     props: {
-      link: {
+      path: {
         type: String,
         required: true,
       },
@@ -21,6 +24,7 @@
           return ['twitter', 'github'].indexOf(value) !== -1
         }
       },
+      external: Boolean,
     }
   }
 </script>
