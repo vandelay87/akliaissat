@@ -1,9 +1,7 @@
 <template>
   <div id="app">
     <div>
-      <Banner />
-      <CurriculumVitae />
-      <Social />
+      <router-view></router-view>
       <CookieConsent :cookie="cookie" />
       <Footer />
     </div>
@@ -11,18 +9,12 @@
 </template>
 
 <script>
-  import Banner from './components/Banner'
-  import CurriculumVitae from './components/CurriculumVitae'
-  import Social from './components/Social'
   import CookieConsent from './components/CookieConsent'
   import Footer from './components/Footer'
 
   export default {
     name: 'App',
     components: {
-      Banner,
-      CurriculumVitae,
-      Social,
       CookieConsent,
       Footer,
     },
