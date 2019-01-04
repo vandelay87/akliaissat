@@ -1,5 +1,5 @@
 import { RouterLinkStub, mount } from '@vue/test-utils';
-import Footer from '../Footer.vue';
+import Footer from '../components/Footer.vue';
 
 describe('Footer.vue', () => {
   it('renders component', () => {

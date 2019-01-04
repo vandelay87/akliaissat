@@ -41,7 +41,7 @@
   @import '../assets/variables.scss';
 
   .footer {
-    background-color: $black;
+    background-color: $darkGray;
     padding: 1em;
 
     .links {

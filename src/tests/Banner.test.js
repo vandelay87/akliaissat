@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import Banner from '../Banner.vue';
+import Banner from '../components/Banner.vue';
 
 describe('Banner.vue', () => {
   it('renders component', () => {

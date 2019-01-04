@@ -55,6 +55,6 @@
       "!**/webpack.config.js",
       "!**/src/tests/coverage/lcov-report/*.js"
     ],
-    "coverageDirectory": "<rootDir>/src/components/tests/coverage"
+    "coverageDirectory": "<rootDir>/src/tests/coverage"
   }
 }

@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import Button from '../generic/Button.vue';
+import Button from '../components/generic/Button.vue';
 
 describe('Button.vue', () => {
   it('renders button', () => {

@@ -1,5 +1,5 @@
 import { RouterLinkStub, shallowMount } from '@vue/test-utils';
-import Link from '../generic/Link.vue';
+import Link from '../components/generic/Link.vue';
 
 describe('Link.vue', () => {
   it('renders link', () => {

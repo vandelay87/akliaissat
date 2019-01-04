@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import CurriculumVitae from '../CurriculumVitae.vue';
+import CurriculumVitae from '../components/CurriculumVitae.vue';
 
 describe('CurriculumVitae.vue', () => {
   it('renders component', () => {

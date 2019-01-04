@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import CookieConsent from '../CookieConsent.vue';
+import CookieConsent from '../components/CookieConsent.vue';
 
 describe('CookieConsent.vue', () => {
   it('renders component', () => {
