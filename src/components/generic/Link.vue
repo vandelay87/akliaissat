@@ -1,5 +1,5 @@
 <template>
-  <a v-if="external === true" :href="path" :class="customClass" class="link" target="_blank">
+  <a v-if="external === true" :href="path" :class="customClass" class="link" target="_blank" @click="outboundClick(path)">
     {{ text }}
   </a>
   <router-link v-else :to="path" :class="customClass" class="link">
@@ -25,6 +25,15 @@
         }
       },
       external: Boolean,
+    },
+    methods: {
+     outboundClick: function(label) {
+       this.$ga.event({
+          eventCategory: 'Outbound Link',
+          eventAction: 'click',
+          eventLabel: label,
+        })
+     }
     }
   }
 </script>

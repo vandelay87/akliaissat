@@ -31,10 +31,16 @@ describe('Link.vue', () => {
       stubs: {
         RouterLink: RouterLinkStub,
       },
+      mocks: {
+        $ga: {
+          event: jest.fn(),
+        },
+      },
     });
 
     wrapper.find('a').trigger('click');
     expect(wrapper.vm.path).toBe('https://www.bbc.co.uk');
+    expect(wrapper.vm.$ga.event).toHaveBeenCalledTimes(1);
   });
 
   it('binds valid custom class', () => {

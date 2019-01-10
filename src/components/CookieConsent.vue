@@ -39,6 +39,10 @@
         visible: true,
         title: "This website uses cookies",
         subtitle: "Is that cool? I use them to help the website run better. You can find more information on the privacy page.",
+        analyticsEvent: {
+          category: 'Cookie Consent',
+          action: 'click',
+        }
       }
     },
     computed: {
@@ -53,9 +57,21 @@
         now.setMonth( now.getMonth() + 12 );
         document.cookie = name + "=true; expires=" + now.toUTCString();
         this.cookie.consent = true;
+
+        this.$ga.event({
+          eventCategory: this.analyticsEvent.category,
+          eventAction: this.analyticsEvent.action,
+          eventLabel: 'Accept',
+        })
       },
       hideBanner: function() {
         this.visible = false;
+
+        this.$ga.event({
+          eventCategory: this.analyticsEvent.category,
+          eventAction: this.analyticsEvent.action,
+          eventLabel: 'Decline',
+        })
       }
     },
   }
