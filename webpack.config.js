@@ -1,7 +1,7 @@
-// webpack.config.js
 const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const env = process.env.NODE_ENV;
 const sourceMap = env === 'development';
@@ -14,8 +14,6 @@ const config = {
   },
   optimization: {
     splitChunks: {
-      // Must be specified for HtmlWebpackPlugin to work correctly.
-      // See: https://github.com/jantimon/html-webpack-plugin/issues/882
       chunks: 'all',
     },
   },
@@ -60,6 +58,7 @@ const config = {
       template: path.join(__dirname, 'src', 'index.html'),
       inject: true,
     }),
+    new Dotenv(),
   ],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),

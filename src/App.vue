@@ -1,10 +1,8 @@
 <template>
   <div id="app">
-    <div>
-      <router-view></router-view>
-      <CookieConsent :cookie="cookie" />
-      <Footer />
-    </div>
+    <router-view></router-view>
+    <CookieConsent :cookie="cookie" />
+    <Footer />
   </div>
 </template>
 
