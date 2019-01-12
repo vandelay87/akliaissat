@@ -134,7 +134,7 @@
 <style lang="scss" scoped>
   @import '../assets/global.scss';
   @import '../assets/breakpoints.scss';
-  @import '../assets/variables.scss';
+  @import '../assets/colours.scss';
 
   .cv {
     @extend .wrapper;

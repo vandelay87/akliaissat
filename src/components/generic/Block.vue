@@ -34,7 +34,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../assets/variables.scss';
+  @import '../../assets/colours.scss';
 
   .block {
     position: relative;
