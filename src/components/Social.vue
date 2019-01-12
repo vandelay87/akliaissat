@@ -4,7 +4,7 @@
     <div class="block">
       <section v-for="social in accounts" :key="social.key" v-bind:class="social.name" class="subBlock">
         <Heading :title="social.name" align="centre" :size=2  />
-        <Link :text="social.account" :path="social.address" :customClass="social.name" :external=true />
+        <Link :text="social.account" :path="social.address" :customClass="social.name" :outbound=true />
       </section>
     </div>
   </article>

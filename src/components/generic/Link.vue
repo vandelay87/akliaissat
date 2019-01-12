@@ -1,5 +1,5 @@
 <template>
-  <a v-if="external === true" :href="path" :class="customClass" class="link" target="_blank" @click="outboundClick(path)">
+  <a v-if="outbound === true" :href="path" :class="customClass" class="link" target="_blank" @click="outboundClick(path)">
     {{ text }}
   </a>
   <router-link v-else :to="path" :class="customClass" class="link">
@@ -21,10 +21,10 @@
       },
       customClass: {
         validator: function (value) {
-          return ['twitter', 'github'].indexOf(value) !== -1
+          return ['twitter', 'github', 'alt'].indexOf(value) !== -1
         }
       },
-      external: Boolean,
+      outbound: Boolean,
     },
     methods: {
      outboundClick: function(label) {
@@ -74,6 +74,14 @@
       &:hover, &:active, &:focus {
         background-color: $white;
         color: $github;
+      }
+    }
+
+    &.alt {
+      color: $linkAlt;
+
+      &:hover, &:active, &:focus {
+        color: $linkAltHover;
       }
     }
   }

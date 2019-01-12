@@ -7,7 +7,7 @@ describe('Link.vue', () => {
       propsData: {
         path: 'https://www.google.com',
         text: 'boggle.bob',
-        external: true,
+        outbound: true,
       },
       stubs: {
         RouterLink: RouterLinkStub,
@@ -17,7 +17,7 @@ describe('Link.vue', () => {
     expect(wrapper.contains('a')).toBe(true);
     expect(wrapper.props().path).toBe('https://www.google.com');
     expect(wrapper.props().text).toBe('boggle.bob');
-    expect(wrapper.props().external).toBe(true);
+    expect(wrapper.props().outbound).toBe(true);
     expect(wrapper.html()).toContain('boggle');
   });
 
@@ -26,7 +26,7 @@ describe('Link.vue', () => {
       propsData: {
         path: 'https://www.bbc.co.uk',
         text: 'goggle.gob',
-        external: true,
+        outbound: true,
       },
       stubs: {
         RouterLink: RouterLinkStub,
@@ -49,7 +49,7 @@ describe('Link.vue', () => {
         path: 'https://www.github.com',
         text: 'gothub.lom',
         customClass: 'github',
-        external: true,
+        outbound: true,
       },
       stubs: {
         RouterLink: RouterLinkStub,
