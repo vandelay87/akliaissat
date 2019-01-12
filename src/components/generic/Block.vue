@@ -46,12 +46,14 @@
       margin: 0;
 
       &:before {
-        content: 'ℹ';
+        content: '';
+        background: no-repeat url('../../assets/images/information.svg');
+        background-size: cover;
         position: absolute;
-        font-size: 2em;
-        left: 30px;
-        top: 0;
-        border: none;
+        height: 1.875em;
+        width: 1.875em;
+        top: 0.5em;
+        left: 1.25em;
       }
     }
 
@@ -60,8 +62,8 @@
 
       .content {
         &:before {
-          content: '⚠';
-          left: 20px;
+          background: no-repeat url('../../assets/images/alert.svg');
+          background-size: cover;
         }
       }
     }
@@ -71,8 +73,8 @@
 
       .content {
         &:before {
-          content: '⚠';
-          left: 20px;
+          background: no-repeat url('../../assets/images/alert.svg');
+          background-size: cover;
         }
       }
     }
