@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils';
+import { RouterLinkStub, mount } from '@vue/test-utils';
 import CookieConsent from '../components/CookieConsent.vue';
 
 describe('CookieConsent.vue', () => {
@@ -9,6 +9,9 @@ describe('CookieConsent.vue', () => {
           consent: false,
           name: 'nomnom',
         },
+      },
+      stubs: {
+        RouterLink: RouterLinkStub,
       },
     });
 

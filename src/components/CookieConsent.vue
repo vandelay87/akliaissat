@@ -5,9 +5,9 @@
         <div class="block header">
           <Heading
             :title=title
-            :subtitle=subtitle
             :size=3
           />
+          <p>Is that cool? I use them to help the website run better. You can find more information on the <Link path="/privacy" text="privacy page" customClass="alt" />.</p>
         </div>
         <div class="block buttons">
           <Button value="Cool" :onClick="createCookie.bind(null, cookie.name)" />
@@ -21,12 +21,14 @@
 <script>
   import Heading from './generic/Heading'
   import Button from './generic/Button'
+  import Link from './generic/Link'
 
   export default {
     name: 'CookieConsent',
     components: {
       Heading,
-      Button
+      Button,
+      Link,
     },
     props: {
       cookie: {
@@ -38,7 +40,6 @@
       return {
         visible: true,
         title: "This website uses cookies",
-        subtitle: "Is that cool? I use them to help the website run better. You can find more information on the privacy page.",
         analyticsEvent: {
           category: 'Cookie Consent',
           action: 'click',
@@ -86,7 +87,8 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding: 0 0 0.750em;
+    // padding: 0 0 0.750em;
+    padding: 0 0 1.75em;
     background-color: $blue;
     color: $white;
 
@@ -139,7 +141,7 @@
   }
 
   .slide-enter-active, .slide-leave-active {
-    transition: bottom .3s;
+    transition: bottom .3s ease-in-out;
   }
 
   .slide-enter-to, .slide-leave {
@@ -148,14 +150,6 @@
   }
 
   .slide-enter, .slide-leave-to {
-    bottom: -22.5em;
-
-    @include breakpoint(tablet) {
-      bottom: -14.375em;
-    }
-
-    @include breakpoint(tabletLarge) {
-      bottom: -12.5em
-    }
+    bottom: -26em;
   }
 </style>

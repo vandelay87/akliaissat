@@ -2,7 +2,7 @@
   <article class="block" :class="type">
     <p class="content">
       {{ title }}
-      <Link v-if="link === true" :path="linkPath" :text="linkText" :outbound="linkOutbound" customClass="alt" />
+      <Link v-if="link === true" :path="linkPath" :text="linkText" :outbound="linkOutbound" customClass="alt" />.
     </p>
   </article>
 </template>
