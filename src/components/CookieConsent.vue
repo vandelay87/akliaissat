@@ -87,7 +87,6 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    // padding: 0 0 0.750em;
     padding: 0 0 1.75em;
     background-color: $blue;
     color: $white;

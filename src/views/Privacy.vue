@@ -25,7 +25,7 @@
     data() {
       return {
         info: {
-          title: 'I made this website, you can check out every line of code ',
+          title: 'I made this website. You can check out every line of code ',
           link: {
             text: 'here',
             path: 'https://github.com/vandelay87/akliaissat',
