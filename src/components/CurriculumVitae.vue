@@ -144,10 +144,10 @@
       flex-direction: column;
       align-items: baseline;
       justify-content: center;
-      background: #F0F0F0;
+      background: $gray;
       padding: 1em 0;
 
-      &:nth-child(even) {
+      &:nth-child(odd) {
         background: $lightGray;
       }
 
