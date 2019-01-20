@@ -2,13 +2,14 @@
   <div class="privacy">
     <Heading title="Privacy Dump" />
     <p>I'm not doing anything funky with your data.</p>
-    <Block
-      :title="info.title"
-      :link=true
-      :linkText="info.link.text"
-      :linkPath="info.link.path"
-      :linkOutbound=true
-    />
+    <Block>
+      <p>I made this website. You can check out every line of code
+        <Link
+          path="https://github.com/vandelay87/akliaissat"
+          text="here"
+          customClass="alt"
+          :outbound=true />.</p>
+    </Block>
     <section class="block">
       <p></p>
       <Table :headers="table.headers" :data="table.data" />
@@ -19,6 +20,7 @@
 <script>
   import Heading from '../components/generic/Heading'
   import Block from '../components/generic/Block'
+  import Link from '../components/generic/Link'
   import Table from '../components/generic/Table'
 
   export default {
@@ -26,17 +28,11 @@
     components: {
       Heading,
       Block,
+      Link,
       Table,
     },
     data() {
       return {
-        info: {
-          title: 'I made this website. You can check out every line of code ',
-          link: {
-            text: 'here',
-            path: 'https://github.com/vandelay87/akliaissat',
-          }
-        },
         table: {
           headers: [
             'Cookie',

@@ -1,9 +1,6 @@
 <template>
   <article class="block" :class="type">
-    <p class="content">
-      {{ title }}
-      <Link v-if="link === true" :path="linkPath" :text="linkText" :outbound="linkOutbound" customClass="alt" />.
-    </p>
+    <slot></slot>
   </article>
 </template>
 
@@ -12,23 +9,12 @@
 
   export default {
     name: 'Block',
-    components: {
-      Link,
-    },
     props: {
-      title: {
-        type: String,
-        required: true,
-      },
       type: {
         validator: function (value) {
           return ['warning', 'danger'].indexOf(value) !== -1
         }
       },
-      link: Boolean,
-      linkPath: String,
-      linkText: String,
-      linkOutbound: Boolean,
     }
   }
 </script>
@@ -38,44 +24,37 @@
 
   .block {
     position: relative;
+    display: flex;
     background: $blue;
     color: $white;
-    padding: 0.75em 2em 0.75em 4em;
+    padding: 0 2em 0 4em;
 
-    .content {
-      margin: 0;
-
-      &:before {
-        content: '';
-        background: no-repeat url('../../assets/images/information.svg');
-        background-size: cover;
-        position: absolute;
-        height: 1.875em;
-        width: 1.875em;
-        top: 0.5em;
-        left: 1.25em;
-      }
+    &:before {
+      content: '';
+      background: no-repeat url('../../assets/images/information.svg');
+      background-size: cover;
+      position: absolute;
+      height: 1.875em;
+      width: 1.875em;
+      top: 0.75em;
+      left: 1.25em;
     }
 
     &.warning {
       background: $warning;
 
-      .content {
-        &:before {
-          background: no-repeat url('../../assets/images/alert.svg');
-          background-size: cover;
-        }
+      &:before {
+        background: no-repeat url('../../assets/images/alert.svg');
+        background-size: cover;
       }
     }
 
     &.error {
       background: $error;
 
-      .content {
-        &:before {
-          background: no-repeat url('../../assets/images/alert.svg');
-          background-size: cover;
-        }
+      &:before {
+        background: no-repeat url('../../assets/images/alert.svg');
+        background-size: cover;
       }
     }
   }
