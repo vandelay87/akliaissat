@@ -1,17 +1,21 @@
 <template>
   <div class="privacy">
     <Heading title="Privacy Dump" />
-    <p>I'm not doing anything funky with your data.</p>
-    <Block>
-      <p>I made this website. You can check out every line of code
-        <Link
-          path="https://github.com/vandelay87/akliaissat"
-          text="here"
-          customClass="alt"
-          :outbound=true />.</p>
-    </Block>
     <section class="block">
-      <p></p>
+      <p>I'm not doing anything funky with your data. I only ever create cookies to make the website work, always empty of any malicious intent. I'm a good boy.</p>
+      <Block>
+        <p>I made this website. You can check out every line of code
+          <Link
+            path="https://github.com/vandelay87/akliaissat"
+            text="here"
+            customClass="alt"
+            :outbound=true />.</p>
+      </Block>
+      <p>Unfortunately, that annoying cookie message will show forever until you give your consent. Sorry.</p>
+    </section>
+    <section class="block">
+      <Heading title="Mmm, Cookies" :size=2 />
+      <p>If you're somehow interested, here's a list of all the cookies that are used across the website.</p>
       <Table :headers="table.headers" :data="table.data" />
     </section>
   </div>

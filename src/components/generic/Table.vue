@@ -33,6 +33,8 @@
   @import '../../assets/colours.scss';
 
   table {
+    display: block;
+    overflow: auto;
     width: 100%;
     border-spacing: 0;
 
