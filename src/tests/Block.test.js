@@ -8,11 +8,13 @@ describe('Block.vue', () => {
         type: 'warning',
       },
       slots: {
-        foo: '<h1>Stop right now!</h1>',
+        default: '<div class="msg-msg-msg">peace and love</div>',
       },
     });
 
-    expect(wrapper.html()).toContain('Stop right now!');
+    expect(wrapper.contains('div')).toBe(true);
+    expect(wrapper.html()).toContain('peace and love');
+    expect(wrapper.findAll('.msg-msg-msg').length).toBe(1);
     expect(wrapper.props().type).toBe('warning');
   });
 });

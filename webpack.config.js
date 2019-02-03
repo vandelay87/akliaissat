@@ -63,6 +63,9 @@ const config = {
       filename: path.join(__dirname, 'dist', 'index.html'),
       template: path.join(__dirname, 'src', 'index.html'),
       inject: true,
+      meta: {
+        viewport: 'width=device-width, initial-scale=1.0',
+      },
     }),
     new Dotenv(),
   ],
