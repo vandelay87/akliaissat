@@ -16,5 +16,6 @@ describe('Block.vue', () => {
     expect(wrapper.html()).toContain('peace and love');
     expect(wrapper.findAll('.msg-msg-msg').length).toBe(1);
     expect(wrapper.props().type).toBe('warning');
+    expect(wrapper.findAll('.warning').length).toBe(1);
   });
 });

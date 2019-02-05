@@ -17,6 +17,7 @@
       <Heading title="Mmm, Cookies" :size=2 />
       <p>If you're somehow interested, here's a list of all the cookies that are used across the website.</p>
       <Table :headers="table.headers" :data="table.data" />
+      <Disclaimer text="Whenever I write some code that contains functionality that can create cookies, this table will be updated." />
     </section>
   </div>
 </template>
@@ -26,6 +27,7 @@
   import Block from '../components/generic/Block'
   import Link from '../components/generic/Link'
   import Table from '../components/generic/Table'
+  import Disclaimer from '../components/generic/Disclaimer'
 
   export default {
     name: 'Privacy',
@@ -34,6 +36,7 @@
       Block,
       Link,
       Table,
+      Disclaimer,
     },
     data() {
       return {
