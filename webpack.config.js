@@ -55,6 +55,12 @@ const config = {
           loader: 'svg-url-loader',
         },
       },
+      {
+        test: /\.(png|jpg)$/,
+        use: {
+          loader: 'file-loader',
+        },
+      },
     ],
   },
   plugins: [

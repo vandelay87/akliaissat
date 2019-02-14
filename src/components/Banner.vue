@@ -16,8 +16,8 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../assets/colours.scss';
   @import '../assets/breakpoints.scss';
+  @import '../assets/colours.scss';
 
   .banner {
     background-color: $darkGray;
