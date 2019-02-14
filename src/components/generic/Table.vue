@@ -58,6 +58,7 @@
 
         td {
           padding: 1em;
+          min-width: 8em;
         }
       }
     }

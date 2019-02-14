@@ -2,7 +2,7 @@
   <div class="privacy">
     <Heading title="Privacy Dump" />
     <section class="block">
-      <p>I'm not doing anything funky with your data. I only ever create cookies to make the website work, always empty of any malicious intent. I'm a good boy.</p>
+      <p>I'm not doing anything funky with your data. I only ever create cookies to make the website work properly, always empty of any malicious intent. You have nothing to worry about, I'm a good boy.</p>
       <Block>
         <p>I made this website. You can check out every line of code
           <Link
@@ -55,7 +55,7 @@
             [
               'Cookie Consent',
               'cookie_consent',
-              'If you decide to give your consent I save this cookie so I know if I have permission to save other cookies.',
+              'If you decide to give your consent I create this cookie so I know if I have permission to create other cookies.',
             ]
           ]
         }
