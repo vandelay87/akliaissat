@@ -1,4 +1,16 @@
 {
+    "extends": [
+        "airbnb-base",
+        "plugin:vue/recommended",
+        "prettier",
+        "prettier/babel",
+        "prettier/vue"
+    ],
+    "plugins": [
+      "babel",
+      "prettier",
+      "vue"
+    ],
     "env": {
         "browser": true,
         "es6": true,
@@ -6,11 +18,12 @@
         "jest": true
     },
      "parserOptions": {
-         "parser": "babel-eslint"
+         "parser": "babel-eslint",
+         "ecmaFeatures": {
+           "vue": true
+         }
      },
-    "extends": [
-        "airbnb-base",
-        "plugin:vue/recommended"
-    ],
-    "rules": {}
+    "rules": {
+      "prettier/prettier": "error"
+    }
 }

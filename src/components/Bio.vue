@@ -8,13 +8,14 @@
       maxWidth='342px'
       caption="A picture of me eating a pizza in a totally normal way, like a regular human being."
     />
-    <p>My name is Akli, I'm {{ getAge }} years old and I'm a web developer. For some reason you've stumbled across my website. I feel honoured!</p>
+    <p>My name is Akli, I'm {{ getAge }} years old and I'm a web developer. For some reason you've stumbled across my website. I feel honoured! I made this website using a really cool framework called <Link text="Vue.js" path="https://vuejs.org/" :outbound=true />. You can have a look at the code over <Link text="here" path="https://github.com/vandelay87/akliaissat" :outbound=true /> on my GitHub.</p>
   </article>
 </template>
 
 <script>
   import Heading from './generic/Heading'
   import Picture from './generic/Picture'
+  import Link from './generic/Link'
   import Image from '../assets/images/me.jpg'
 
   export default {
@@ -22,6 +23,7 @@
     components: {
       Heading,
       Picture,
+      Link,
     },
     data() {
       return {
@@ -31,8 +33,7 @@
     computed: {
       getAge() {
         const birthday = new Date('September 09, 1987');
-        const ageDiference = Date.now() - birthday.getTime();
-        const age = new Date(ageDiference);
+        const age = new Date(Date.now() - birthday.getTime());
 
         return Math.abs(age.getUTCFullYear() - 1970);
       }

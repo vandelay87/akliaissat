@@ -46,7 +46,7 @@
     }
 
     &.twitter, &.github {
-      padding: 2em;
+      padding: 2em 1em;
       background-color: transparent;
       border: 5px solid $white;
       color: $white;

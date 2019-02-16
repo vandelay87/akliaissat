@@ -38,14 +38,18 @@
 
 <style lang="scss" scoped>
   @import '../../assets/breakpoints.scss';
+  @import '../../assets/colours.scss';
 
   .picture {
     display: block;
-    margin: auto;
+    margin: 2em auto;
     width: 100%;
     float: none;
+    padding: 1em 0;
 
     @include breakpoint(tablet) {
+      margin: auto;
+
       &.left {
         float: left;
       }
@@ -57,24 +61,44 @@
   }
 
   .figure {
-    margin: auto;
+    margin: 2em auto;
 
     @include breakpoint(tablet) {
+      margin: auto;
+
       &.left {
         float: left;
+        padding: 0 1em 1em 0;
       }
 
       &.right {
         float: right;
+        padding: 0 0 1em 1em;
       }
     }
 
     .image {
       width: 100%;
+      vertical-align: middle;
+
+      @include breakpoint(tablet) {
+        &.left {
+          float: left;
+          padding: 0 1em 1em 0;
+        }
+
+        &.right {
+          float: right;
+          padding: 0 0 1em 1em;
+        }
+      }
     }
 
     .caption {
       font-size: 0.875em;
+      background: $blue;
+      color: $white;
+      padding: 1em;
     }
   }
 </style>
