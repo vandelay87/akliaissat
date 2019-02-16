@@ -5,8 +5,6 @@
 </template>
 
 <script>
-  import Link from './Link'
-
   export default {
     name: 'Block',
     props: {
