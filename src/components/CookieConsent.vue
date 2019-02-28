@@ -57,7 +57,7 @@
 
         now.setMonth( now.getMonth() + 12 );
         document.cookie = name + "=true; expires=" + now.toUTCString();
-        this.cookie.consent = true;
+        this.visible = false;
 
         this.$ga.event({
           eventCategory: this.analyticsEvent.category,
