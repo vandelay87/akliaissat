@@ -15,7 +15,7 @@
     </section>
     <section class="block">
       <Heading title="Mmm, Cookies" :size=2 />
-      <p>If you're somehow interested, here's a list of all the cookies that are used across the website.</p>
+      <p>If you're somehow interested, here are all of the cookies that are used across the website.</p>
       <Table :headers="table.headers" :data="table.data" />
       <Disclaimer text="Whenever I write some code that contains functionality that can create cookies, this table will be updated." />
     </section>

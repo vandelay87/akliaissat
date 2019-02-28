@@ -9,6 +9,7 @@
       caption="A picture of me eating a pizza in a totally normal way, like a regular human being."
     />
     <p>My name is Akli, I'm {{ getAge }} years old and I'm a web developer. For some reason you've stumbled across my website. I feel honoured! I made this website using a really cool framework called <Link text="Vue.js" path="https://vuejs.org/" :outbound=true />. You can have a look at the code over <Link text="here" path="https://github.com/vandelay87/akliaissat" :outbound=true /> on my GitHub.</p>
+    <p>I made this website because I owned the domain for a while, I wanted to learn Vue.js and I wanted to have a place where I can make and show off cool stuff!</p>
   </article>
 </template>
 

@@ -29,7 +29,7 @@
     computed: {
       style: function() {
         return {
-          maxWidth : this.maxWidth ? this.maxWidth : 'none',
+          maxWidth: this.maxWidth ? this.maxWidth : 'none',
         }
       }
     },
@@ -45,17 +45,18 @@
     margin: 2em auto;
     width: 100%;
     float: none;
-    padding: 1em 0;
 
     @include breakpoint(tablet) {
       margin: auto;
 
       &.left {
         float: left;
+        padding: 0 1em 1em 0;
       }
 
       &.right {
         float: right;
+        padding: 0 0 1em 1em;
       }
     }
   }
@@ -80,18 +81,6 @@
     .image {
       width: 100%;
       vertical-align: middle;
-
-      @include breakpoint(tablet) {
-        &.left {
-          float: left;
-          padding: 0 1em 1em 0;
-        }
-
-        &.right {
-          float: right;
-          padding: 0 0 1em 1em;
-        }
-      }
     }
 
     .caption {
