@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils';
 import Bio from '../components/Bio.vue';
 
-describe('Banner.vue', () => {
+describe('Bio.vue', () => {
   it('renders component', () => {
     const wrapper = mount(Bio, {});
 

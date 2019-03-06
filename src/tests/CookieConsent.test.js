@@ -70,4 +70,25 @@ describe('CookieConsent.vue', () => {
     expect(wrapper.vm.isVisible).toBe(false);
     expect(wrapper.vm.$ga.event).toHaveBeenCalledTimes(1);
   });
+
+  it('hides banner if user gives consent', () => {
+    const wrapper = mount(CookieConsent, {
+      propsData: {
+        cookie: {
+          consent: true,
+          name: 'nomnom',
+        },
+      },
+      stubs: {
+        RouterLink: RouterLinkStub,
+      },
+      mocks: {
+        $ga: {
+          event: jest.fn(),
+        },
+      },
+    });
+
+    expect(wrapper.vm.isVisible).toBe(false);
+  });
 });

@@ -43,9 +43,11 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../assets/global.scss';
   @import '../assets/breakpoints.scss';
 
   .bio {
+    @extend .wrapperPadding;
     overflow: hidden;
   }
 </style>

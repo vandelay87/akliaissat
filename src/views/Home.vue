@@ -1,9 +1,7 @@
 <template>
   <div class="home">
     <Banner />
-    <section class="block">
-      <Bio />
-    </section>
+    <Bio />
     <CurriculumVitae />
     <Social />
   </div>
@@ -25,13 +23,3 @@
     },
   }
 </script>
-
-<style lang="scss" scoped>
-  @import '../assets/global.scss';
-
-  .home {
-    .block {
-      @extend .wrapperPadding;
-    }
-  }
-</style>
