@@ -1,6 +1,6 @@
 <template>
   <article class="bio">
-    <Heading title="To Whom It May Concern" align="centre" />
+    <Heading title="To whom it may concern" align="centre" />
     <Picture
       :path=image
       alt="A picture of me eating pizza."

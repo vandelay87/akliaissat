@@ -1,6 +1,6 @@
 <template>
   <article class="social">
-    <Heading title="Follow Me" align="centre" />
+    <Heading title="Follow me" align="centre" />
     <div class="block">
       <section v-for="social in accounts" :key="social.key" v-bind:class="social.name" class="subBlock">
         <Heading :title="social.name" align="centre" :size=2  />

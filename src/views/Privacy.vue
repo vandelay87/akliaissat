@@ -1,6 +1,6 @@
 <template>
   <div class="privacy">
-    <Heading title="Privacy Dump" />
+    <Heading title="Privacy dump" />
     <section class="block">
       <p>I'm not doing anything funky with your data. I only ever create cookies to make the website work properly, always empty of any malicious intent. You have nothing to worry about, I'm a good boy.</p>
       <Block>
@@ -14,7 +14,7 @@
       <p>Unfortunately, that annoying cookie message will show forever until you give your consent. Sorry.</p>
     </section>
     <section class="block">
-      <Heading title="Mmm, Cookies" :size=2 />
+      <Heading title="Mmm, cookies" :size=2 />
       <p>If you're somehow interested, here are all of the cookies that are used across the website.</p>
       <Table :headers="table.headers" :data="table.data" />
       <Disclaimer text="Whenever I write some code that contains functionality that can create cookies, this table will be updated." />

@@ -6,13 +6,13 @@
         <Heading title="Technologies" :size=2 />
       </div>
       <div class="subBlock">
-        <Heading title="comfortable" :size=3 />
+        <Heading title="Comfortable" :size=3 />
         <ul class="list">
           <li v-for="(skill, index) in skills.good" :key="index">{{ skill }}</li>
         </ul>
       </div>
       <div class="subBlock">
-        <Heading title="it's been a while" :size=3 />
+        <Heading title="It's been a while" :size=3 />
         <ul class="list">
           <li v-for="(skill, index) in skills.ok" :key="index">{{ skill }}</li>
         </ul>

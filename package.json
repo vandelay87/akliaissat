@@ -61,7 +61,8 @@
       "**/*.{js,vue}",
       "!**/node_modules/**",
       "!**/webpack.config.js",
-      "!**/src/tests/coverage/lcov-report/*.js"
+      "!**/src/tests/coverage/lcov-report/*.js",
+      "!**/src/tests/mocks/fileMock.js"
     ],
     "coverageDirectory": "<rootDir>/src/tests/coverage"
   }
