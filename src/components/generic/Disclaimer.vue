@@ -1,9 +1,7 @@
 <template>
-  <article class="disclaimer">
-    <footer>
-      <p>{{ text }}</p>
-    </footer>
-  </article>
+  <footer class="disclaimer">
+    <p>{{ text }}</p>
+  </footer>
 </template>
 
 <script>

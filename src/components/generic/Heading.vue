@@ -1,5 +1,5 @@
 <template>
-  <header :class="align">
+  <header class="header" :class="align">
     <h2 v-if="size === 2">{{ title }}</h2>
     <h3 v-else-if="size === 3">{{ title }}</h3>
     <h4 v-else-if="size === 4">{{ title }}</h4>
@@ -30,36 +30,42 @@
 </script>
 
 <style lang="scss" scoped>
-  .left {
-    text-align: left;
-  }
+  @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-  .right {
-    text-align: right;
-  }
+  .header {
+    font-family: 'Roboto', sans-serif;
 
-  .centre {
-    text-align: center;
-  }
+    &.left {
+      text-align: left;
+    }
 
-  h1 {
-    font-size: 3em;
-  }
+    &.right {
+      text-align: right;
+    }
 
-  h2 {
-    font-size: 2.25em;
-  }
+    &.centre {
+      text-align: center;
+    }
 
-  h3 {
-    font-size: 1.75em;
-  }
+    h1 {
+      font-size: 3em;
+    }
 
-  h4 {
-    font-size: 1.125em;
-  }
+    h2 {
+      font-size: 2.25em;
+    }
 
-  .subtitle {
-    font-size: 1em;
-    font-weight: 600;
+    h3 {
+      font-size: 1.75em;
+    }
+
+    h4 {
+      font-size: 1.125em;
+    }
+
+    .subtitle {
+      font-size: 1em;
+      font-weight: 600;
+    }
   }
 </style>

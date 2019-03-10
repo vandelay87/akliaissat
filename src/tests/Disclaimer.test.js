@@ -9,7 +9,7 @@ describe('Disclaimer.vue', () => {
       },
     });
 
-    expect(wrapper.contains('article')).toBe(true);
+    expect(wrapper.contains('footer')).toBe(true);
     expect(wrapper.props().text).toBe('Marvel films are rubbish');
     expect(wrapper.html()).toContain('Marvel films are rubbish');
   });
