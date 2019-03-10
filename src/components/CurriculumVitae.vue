@@ -7,15 +7,15 @@
       </div>
       <div class="subBlock">
         <Heading title="Comfortable" :size=3 />
-        <ul class="list">
-          <li v-for="(skill, index) in skills.good" :key="index">{{ skill }}</li>
-        </ul>
+        <div class="icons">
+          <Icon v-for="(skill, index) in skills.good" :key="index" :icon=skill[0] :name=skill[1] />
+        </div>
       </div>
       <div class="subBlock">
         <Heading title="It's been a while" :size=3 />
-        <ul class="list">
-          <li v-for="(skill, index) in skills.ok" :key="index">{{ skill }}</li>
-        </ul>
+        <div class="icons">
+          <Icon v-for="(skill, index) in skills.ok" :key="index" :icon=skill[0] :name=skill[1] />
+        </div>
       </div>
     </section>
     <section class="block col2">
@@ -45,41 +45,39 @@
 
 <script>
   import Heading from './generic/Heading'
+  import Icon from './generic/Icon'
 
   export default {
     name: 'CurriculumVitae',
     components: {
-      Heading
+      Heading,
+      Icon,
     },
     data() {
       return {
         skills: {
           good: [
-            'JavaScript ES6',
-            'React.js',
-            'Vue',
-            'Angular/AngularJS',
-            'Fluid Responsive Web Design',
-            'HTML5',
-            'RESTful WebServices',
-            'CSS/SASS/SCSS',
-            'Webpack',
-            'Gulp.js',
-            'AEM',
-            'CMS',
-            'Jest',
-            'SQL/MySQL',
-            'Adobe Photoshop',
-            'jQuery'
+            [ 'javascript', 'JavaScript ES6', ],
+            [ 'react', 'React.js', ],
+            [ 'vue', 'Vue.js', ],
+            [ 'angular', 'Angular/Angular.js', ],
+            [ 'html', 'HTML5', ],
+            [ 'css', 'CSS3', ],
+            [ 'sass', 'SASS/SCSS', ],
+            [ 'less', 'LESS', ],
+            [ 'git', 'GIT', ],
+            [ 'webpack', 'Webpack', ],
+            [ 'gulp', 'Gulp.js', ],
+            [ 'jasmine', 'Jasmine', ],
+            [ 'sql', 'SQL/MySQL', ],
+            [ 'photoshop', 'Adobe Photoshop', ],
+            [ 'confluence', 'Confluence', ],
+            [ 'jQuery', 'jQuery', ],
           ],
           ok: [
-            '.NET Framework',
-            'PHP',
-            'C#',
-            'ASP Classic',
-            'Silverlight',
-            'WPF',
-            'JavaServer Pages'
+            [ 'dotNet', '.NET Framework' ],
+            [ 'php', 'PHP' ],
+            [ 'cSharp', 'C#' ],
           ]
         },
         experience: [
@@ -161,6 +159,20 @@
         padding: 1em;
         box-sizing: border-box;
         padding: 0 1em;
+
+        .icons {
+          display: flex;
+          flex-flow: wrap;
+          justify-content: flex-start;
+
+          @include breakpoint(tablet) {
+            margin: 0 0 1em;
+          }
+
+          span {
+            margin: 0.75em;
+          }
+        }
 
         @include breakpoint(tablet) {
           flex: 1;
