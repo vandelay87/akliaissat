@@ -60,22 +60,22 @@
             [ 'javascript', 'JavaScript ES6', ],
             [ 'react', 'React.js', ],
             [ 'vue', 'Vue.js', ],
-            [ 'angular', 'Angular/Angular.js', ],
+            [ 'angular', 'Angular / AngularJS', ],
             [ 'html', 'HTML5', ],
             [ 'css', 'CSS3', ],
-            [ 'sass', 'SASS/SCSS', ],
+            [ 'sass', 'SASS', ],
             [ 'less', 'LESS', ],
             [ 'git', 'GIT', ],
             [ 'webpack', 'Webpack', ],
             [ 'gulp', 'Gulp.js', ],
             [ 'jasmine', 'Jasmine', ],
-            [ 'sql', 'SQL/MySQL', ],
-            [ 'photoshop', 'Adobe Photoshop', ],
+            [ 'sql', 'SQL / MySQL', ],
+            [ 'photoshop', 'Photoshop', ],
             [ 'confluence', 'Confluence', ],
             [ 'jQuery', 'jQuery', ],
           ],
           ok: [
-            [ 'dotNet', '.NET Framework' ],
+            [ 'dotNet', '.NET' ],
             [ 'php', 'PHP' ],
             [ 'cSharp', 'C#' ],
           ]
@@ -169,8 +169,14 @@
             margin: 0 0 1em;
           }
 
-          span {
+          div {
+            transition: all .2s ease-in-out;
             margin: 0.75em;
+            border: 0;
+
+            &:hover {
+              transform: scale(1.4);
+            }
           }
         }
 
