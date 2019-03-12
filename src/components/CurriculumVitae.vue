@@ -170,10 +170,10 @@
           display: flex;
           flex-flow: wrap;
           justify-content: flex-start;
-          margin: 0 0 0 -12px;
+          margin: 0 0 0 -0.75em;
 
           @include breakpoint(tablet) {
-            margin: 0 0 1em -12px;
+            margin: 0 0 1em -0.75em;
           }
 
           > .icon {
