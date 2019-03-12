@@ -36,5 +36,6 @@ describe('Heading.vue', () => {
     });
 
     expect(wrapper.props().align).toBe('right');
+    expect(wrapper.classes('right')).toBe(true);
   });
 });

@@ -8,13 +8,19 @@
       <div class="subBlock">
         <Heading title="Comfortable" :size=3 />
         <div class="icons">
-          <Icon v-for="(skill, index) in skills.good" :key="index" :icon=skill[0] :name=skill[1] />
+          <div v-for="(skill, index) in skills.good" :key="index" class="icon">
+            <Icon :icon=skill[0] />
+            <span class="label">{{ skill[1] }}</span>
+          </div>
         </div>
       </div>
       <div class="subBlock">
         <Heading title="It's been a while" :size=3 />
         <div class="icons">
-          <Icon v-for="(skill, index) in skills.ok" :key="index" :icon=skill[0] :name=skill[1] />
+          <div v-for="(skill, index) in skills.ok" :key="index" class="icon">
+            <Icon :icon=skill[0] />
+            <span class="label">{{ skill[1] }}</span>
+          </div>
         </div>
       </div>
     </section>
@@ -164,18 +170,27 @@
           display: flex;
           flex-flow: wrap;
           justify-content: flex-start;
+          margin: 0 0 0 -12px;
 
           @include breakpoint(tablet) {
-            margin: 0 0 1em;
+            margin: 0 0 1em -12px;
           }
 
-          div {
-            transition: all .2s ease-in-out;
+          > .icon {
+            max-width: 3em;
             margin: 0.75em;
             border: 0;
+            transition: all .2s ease-in-out;
 
             &:hover {
               transform: scale(1.4);
+            }
+
+            .label {
+              display: block;
+              font-size: 0.625em;
+              font-weight: 600;
+              text-align: center;
             }
           }
         }
