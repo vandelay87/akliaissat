@@ -22,7 +22,8 @@
       align: {
         validator: function (value) {
           return ['left', 'right'].indexOf(value) !== -1
-        }
+        },
+        type: String,
       },
       maxWidth: String,
     },

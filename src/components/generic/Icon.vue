@@ -31,6 +31,7 @@
           ].indexOf(value) !== -1
         },
         required: true,
+        type: String,
       },
     },
   }

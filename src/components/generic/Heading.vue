@@ -23,7 +23,8 @@
       align: {
         validator: function (value) {
           return ['left', 'right', 'centre'].indexOf(value) !== -1
-        }
+        },
+        type: String,
       }
     },
   }

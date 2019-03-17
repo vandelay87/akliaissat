@@ -19,7 +19,8 @@
       customClass: {
         validator: function (value) {
           return ['twitter', 'github'].indexOf(value) !== -1
-        }
+        },
+        type: String,
       },
     }
   }

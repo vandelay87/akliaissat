@@ -11,7 +11,8 @@
       type: {
         validator: function (value) {
           return ['warning', 'danger'].indexOf(value) !== -1
-        }
+        },
+        type: String,
       },
     }
   }
