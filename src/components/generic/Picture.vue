@@ -1,9 +1,8 @@
 <template>
-  <figure v-if="caption" :class="align" class="figure" :style=style>
-    <img :src=path :alt=alt class="image" />
-    <figcaption class="caption">{{ caption }}</figcaption>
+  <figure v-lazyload :class="align" class="figure" :style=style>
+    <img :data-path=path :alt=alt class="image" />
+    <figcaption v-if="caption" class="caption">{{ caption }}</figcaption>
   </figure>
-  <img v-else :src=path :alt=alt :class="align" class="picture" :style=style />
 </template>
 
 <script>
@@ -40,27 +39,6 @@
 <style lang="scss" scoped>
   @import '../../assets/breakpoints.scss';
   @import '../../assets/colours.scss';
-
-  .picture {
-    display: block;
-    margin: 2em auto;
-    width: 100%;
-    float: none;
-
-    @include breakpoint(tablet) {
-      margin: auto;
-
-      &.left {
-        float: left;
-        padding: 0 1em 1em 0;
-      }
-
-      &.right {
-        float: right;
-        padding: 0 0 1em 1em;
-      }
-    }
-  }
 
   .figure {
     margin: 2em auto;
