@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <transition name="fade" mode="out-in">
+      <router-view></router-view>
+    </transition>
     <CookieConsent :cookie="cookie" />
     <Footer />
   </div>
@@ -50,6 +52,18 @@
 
     #app {
       font-family: 'Open Sans', sans-serif;
+
+      .fade-enter-active, .fade-leave-active {
+        transition: opacity 0.3s;
+      }
+
+      .fade-enter-to, .fade-leave {
+        opacity: 1;
+      }
+
+      .fade-enter, .fade-leave-to {
+        opacity: 0;
+      }
     }
   }
 </style>
