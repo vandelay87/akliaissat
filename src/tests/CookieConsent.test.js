@@ -11,7 +11,7 @@ describe('CookieConsent.vue', () => {
         },
       },
       stubs: {
-        RouterLink: RouterLinkStub,
+        GLink: RouterLinkStub,
       },
     });
 
@@ -30,7 +30,7 @@ describe('CookieConsent.vue', () => {
         },
       },
       stubs: {
-        RouterLink: RouterLinkStub,
+        GLink: RouterLinkStub,
       },
       mocks: {
         $ga: {
@@ -55,7 +55,7 @@ describe('CookieConsent.vue', () => {
         },
       },
       stubs: {
-        RouterLink: RouterLinkStub,
+        GLink: RouterLinkStub,
       },
       mocks: {
         $ga: {
@@ -80,7 +80,7 @@ describe('CookieConsent.vue', () => {
         },
       },
       stubs: {
-        RouterLink: RouterLinkStub,
+        GLink: RouterLinkStub,
       },
       mocks: {
         $ga: {

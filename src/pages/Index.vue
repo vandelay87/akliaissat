@@ -1,10 +1,12 @@
 <template>
-  <div class="home">
-    <Banner />
-    <Bio />
-    <CurriculumVitae />
-    <Social />
-  </div>
+  <Layout>
+    <div class="index">
+      <Banner />
+      <Bio />
+      <CurriculumVitae />
+      <Social />
+    </div>
+  </Layout>
 </template>
 
 <script>

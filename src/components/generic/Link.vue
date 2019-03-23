@@ -1,8 +1,8 @@
 <template>
   <a v-if="outbound === true" :href="path" :class="customClass" class="link" target="_blank" @click="outboundClick(path)">
     {{ text }}</a>
-  <router-link v-else :to="path" :class="customClass" class="link">
-    {{ text }}</router-link>
+  <g-link v-else :to="path" :class="customClass" class="link">
+    {{ text }}</g-link>
 </template>
 
 <script>

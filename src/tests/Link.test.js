@@ -10,7 +10,7 @@ describe('Link.vue', () => {
         outbound: true,
       },
       stubs: {
-        RouterLink: RouterLinkStub,
+        GLink: RouterLinkStub,
       },
     });
 
@@ -29,7 +29,7 @@ describe('Link.vue', () => {
         outbound: true,
       },
       stubs: {
-        RouterLink: RouterLinkStub,
+        GLink: RouterLinkStub,
       },
       mocks: {
         $ga: {
@@ -52,7 +52,7 @@ describe('Link.vue', () => {
         outbound: true,
       },
       stubs: {
-        RouterLink: RouterLinkStub,
+        GLink: RouterLinkStub,
       },
     });
 

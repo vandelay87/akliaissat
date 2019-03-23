@@ -5,7 +5,7 @@ describe('Footer.vue', () => {
   it('renders component', () => {
     const wrapper = mount(Footer, {
       stubs: {
-        RouterLink: RouterLinkStub,
+        GLink: RouterLinkStub,
       },
     });
 

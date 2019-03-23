@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import Privacy from '../views/Privacy.vue';
+import Privacy from '../pages/Privacy.vue';
 
 describe('Privacy.vue', () => {
   it('renders view', () => {

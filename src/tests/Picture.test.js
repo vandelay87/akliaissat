@@ -1,5 +1,9 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount, createLocalVue } from '@vue/test-utils';
 import Picture from '../components/generic/Picture.vue';
+// import Gridsome from 'gridsome';
+
+// const localVue = createLocalVue();
+// localVue.use(Gridsome);
 
 describe('Picture.vue', () => {
   it('renders image', () => {
@@ -7,7 +11,9 @@ describe('Picture.vue', () => {
       propsData: {
         path: 'akliaissat/src/assets/images/me.jpg',
         alt: 'An hoop.',
+        
       },
+      // localVue,
     });
 
     expect(wrapper.contains('img')).toBe(true);
@@ -23,6 +29,7 @@ describe('Picture.vue', () => {
         alt: 'An hoop.',
         caption: 'Hop, pops and cops.',
       },
+      // localVue,
     });
 
     expect(wrapper.contains('figure')).toBe(true);
@@ -38,6 +45,7 @@ describe('Picture.vue', () => {
         alt: 'An hoop.',
         align: 'left',
       },
+      // localVue,
     });
 
     expect(wrapper.props().align).toBe('left');
@@ -61,6 +69,7 @@ describe('Picture.vue', () => {
         alt: 'An hoop.',
         maxWidth: '420px',
       },
+      // localVue,
     });
 
     expect(wrapper.vm.style).toMatchObject({"maxWidth": "420px"});

@@ -1,6 +1,6 @@
 <template>
-  <figure v-lazyload :class="align" class="figure" :style=style>
-    <img :data-path=path :alt=alt class="image" />
+  <figure :class="align" class="figure" :style=style>
+    <g-image :src=path :alt=alt class="image" blur=50 quality=100 />
     <figcaption v-if="caption" class="caption">{{ caption }}</figcaption>
   </figure>
 </template>
