@@ -30,8 +30,8 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../assets/breakpoints.scss';
-  @import '../../assets/colours.scss';
+  @import '../assets/breakpoints.scss';
+  @import '../assets/colours.scss';
 
   .figure {
     margin: 2em auto;

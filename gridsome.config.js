@@ -15,6 +15,14 @@ module.exports = {
           sendHitTask: isProd,
         },
       }
+    },
+    {
+      use: '@gridsome/source-contentful',
+      options: {
+        space: process.env.AKLIAISSAT_CONTENTFUL_SPACE ? process.env.AKLIAISSAT_CONTENTFUL_SPACE : 'CONTENTFUL_SPACE',
+        accessToken: process.env.AKLIAISSAT_CONTENTFUL_TOKEN ? process.env.AKLIAISSAT_CONTENTFUL_TOKEN : 'CONTENTFUL_TOKEN',
+        typeName: 'Contentful'
+      }
     }
   ]
 }
