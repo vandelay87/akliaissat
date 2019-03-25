@@ -11,30 +11,36 @@
 
 <page-query>
   query Index {
-    allContentfulPage (filter: { id: { in: "3PgattG9PZQSySOOpAPJCY" } }){
+    allContentfulPage (filter: { id: { in: "3PgattG9PZQSySOOpAPJCY" } }) {
       edges {
         node {
           title
-        }
-      }
-    }
-    allContentfulBio {
-      edges {
-        node {
-          heading {
-            title
-            align
-          }
-          image {
-            image {
-              file {
-                url
+          layout {
+            ... on ContentfulPageLayout {
+              fields {
+                heading {
+                  fields {
+                    title
+                    align
+                  }
+                }
+                image {
+                  fields {
+                    image {
+                      fields {
+                        file {
+                          url
+                        }
+                      }
+                    }
+                    alt
+                    caption
+                    align
+                    width
+                  }
+                }
               }
             }
-            alt
-            caption
-            align
-            width
           }
         }
       }
@@ -49,7 +55,7 @@
   import Social from '../components/Social'
 
   export default {
-    name: 'Home',
+    name: 'Index',
     components: {
       Banner,
       Bio,
@@ -61,7 +67,7 @@
         return this.$page.allContentfulPage.edges[0].node.title ? this.$page.allContentfulPage.edges[0].node.title : 'Index';
       },
       getBioData() {
-        return this.$page.allContentfulBio.edges[0].node ? this.$page.allContentfulBio.edges[0].node : {};
+        return this.$page.allContentfulPage.edges[0].node.layout[0].fields ? this.$page.allContentfulPage.edges[0].node.layout[0].fields : {};
       }
     },
     metaInfo() {
