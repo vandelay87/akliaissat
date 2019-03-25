@@ -24,6 +24,18 @@
   </Layout>
 </template>
 
+<page-query>
+  query Privacy {
+    allContentfulPage (filter: { id: { in: "3JNGhUtTBl4dnSu7I0oqKd" } }) {
+      edges {
+        node {
+          title
+        }
+      }
+    }
+  }
+</page-query>
+
 <script>
   import Heading from '../components/generic/Heading'
   import Block from '../components/generic/Block'
@@ -63,6 +75,16 @@
         }
       }
     },
+    computed: {
+      getTitle() {
+        return this.$page.allContentfulPage.edges[0].node.title ? this.$page.allContentfulPage.edges[0].node.title : 'Privacy';
+      },
+    },
+    metaInfo() {
+      return {
+        title: this.getTitle,
+      }
+    }
   }
 </script>
 
