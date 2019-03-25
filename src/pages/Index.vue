@@ -2,7 +2,7 @@
   <Layout>
     <div class="index">
       <Banner />
-      <Bio :data=getBioData />
+      <Bio :heading=getBioHeading :image=getBioImage />
       <CurriculumVitae />
       <Social />
     </div>
@@ -63,16 +63,19 @@
       Social,
     },
     computed: {
-      getTitle() {
+      getPageTitle() {
         return this.$page.allContentfulPage.edges[0].node.title ? this.$page.allContentfulPage.edges[0].node.title : 'Index';
       },
-      getBioData() {
-        return this.$page.allContentfulPage.edges[0].node.layout[0].fields ? this.$page.allContentfulPage.edges[0].node.layout[0].fields : {};
-      }
+      getBioHeading() {
+        return this.$page.allContentfulPage.edges[0].node.layout[0].fields.heading.fields ? this.$page.allContentfulPage.edges[0].node.layout[0].fields.heading.fields : {};
+      },
+      getBioImage() {
+        return this.$page.allContentfulPage.edges[0].node.layout[0].fields.image.fields ? this.$page.allContentfulPage.edges[0].node.layout[0].fields.image.fields : {};
+      },
     },
     metaInfo() {
       return {
-        title: this.getTitle,
+        title: this.getPageTitle,
       }
     }
   }

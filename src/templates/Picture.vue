@@ -1,6 +1,6 @@
 <template>
   <figure :class="align" class="figure">
-    <g-image :src=path :alt=alt :width=width />
+    <g-image :src=path class="image" :alt=alt :width=width />
     <figcaption v-if="caption" class="caption">{{ caption }}</figcaption>
   </figure>
 </template>

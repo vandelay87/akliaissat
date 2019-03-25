@@ -76,13 +76,13 @@
       }
     },
     computed: {
-      getTitle() {
+      getPageTitle() {
         return this.$page.allContentfulPage.edges[0].node.title ? this.$page.allContentfulPage.edges[0].node.title : 'Privacy';
       },
     },
     metaInfo() {
       return {
-        title: this.getTitle,
+        title: this.getPageTitle,
       }
     }
   }
