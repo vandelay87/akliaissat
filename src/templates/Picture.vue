@@ -24,7 +24,7 @@
         },
         type: String,
       },
-      width: String,
+      width: [String, Number],
     },
   }
 </script>

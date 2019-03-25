@@ -1,5 +1,5 @@
 <template>
-  <article class="bio">>
+  <article class="bio">
     <Heading :title=data.heading.fields.title :align=data.heading.fields.align />
     <Picture
       :path=data.image.fields.image.fields.file.url
