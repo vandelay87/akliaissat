@@ -4,7 +4,7 @@
       <Banner />
       <Bio :heading=getBioHeading :image=getBioImage />
       <CurriculumVitae />
-      <Social />
+      <Social :accounts=getSocial />
     </div>
   </Layout>
 </template>
@@ -18,6 +18,7 @@
           layout {
             ... on ContentfulPageLayout {
               fields {
+                name
                 heading {
                   fields {
                     title
@@ -37,6 +38,13 @@
                     caption
                     align
                     width
+                  }
+                }
+                accounts {
+                  account {
+                    name
+                    account
+                    address
                   }
                 }
               }
@@ -64,13 +72,16 @@
     },
     computed: {
       getPageTitle() {
-        return this.$page.allContentfulPage.edges[0].node.title ? this.$page.allContentfulPage.edges[0].node.title : 'Index';
+        return this.$page.allContentfulPage.edges[0].node.title ? this.$page.allContentfulPage.edges[0].node.title : 'BOO';
       },
       getBioHeading() {
-        return this.$page.allContentfulPage.edges[0].node.layout[0].fields.heading.fields ? this.$page.allContentfulPage.edges[0].node.layout[0].fields.heading.fields : {};
+        return (this.$page.allContentfulPage.edges[0].node.layout[0].fields.name === "Bio" && this.$page.allContentfulPage.edges[0].node.layout[0].fields.heading.fields) ? this.$page.allContentfulPage.edges[0].node.layout[0].fields.heading.fields : {};
       },
       getBioImage() {
-        return this.$page.allContentfulPage.edges[0].node.layout[0].fields.image.fields ? this.$page.allContentfulPage.edges[0].node.layout[0].fields.image.fields : {};
+        return (this.$page.allContentfulPage.edges[0].node.layout[0].fields.name === "Bio" && this.$page.allContentfulPage.edges[0].node.layout[0].fields.image.fields) ? this.$page.allContentfulPage.edges[0].node.layout[0].fields.image.fields : {};
+      },
+      getSocial() {
+        return (this.$page.allContentfulPage.edges[0].node.layout[1].fields.name === "Social" && this.$page.allContentfulPage.edges[0].node.layout[1].fields.accounts.account) ? this.$page.allContentfulPage.edges[0].node.layout[1].fields.accounts.account : {};
       },
     },
     metaInfo() {

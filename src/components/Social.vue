@@ -20,23 +20,11 @@
       Heading,
       Link
     },
-    data() {
-      return {
-        accounts: [
-          {
-            key: 2,
-            name: 'twitter',
-            account: '@vandelay1987',
-            address: 'https://twitter.com/vandelay1987'
-          },
-          {
-            key: 1,
-            name: 'github',
-            account: 'vandelay87',
-            address: 'https://github.com/vandelay87'
-          }
-        ]
-      }
+    props: {
+      accounts: {
+        type: Array,
+        required: true
+      },
     },
   }
 </script>

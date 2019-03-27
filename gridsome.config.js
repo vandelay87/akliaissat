@@ -1,7 +1,7 @@
 const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  siteName: 'Gridsome',
+  siteName: 'Akli Aissat',
   plugins: [
     {
       use: '@gridsome/plugin-google-analytics',
