@@ -4,14 +4,14 @@
       <Heading title="Privacy dump" />
       <section class="block">
         <p>I'm not doing anything funky with your data. I only ever create cookies to make the website work properly, always empty of any malicious intent. You have nothing to worry about, I'm a good boy.</p>
-        <Block>
+        <Notice>
           <p>I made this website. You can check out every line of code
             <Link
               path="https://github.com/vandelay87/akliaissat"
               text="here"
               customClass="alt"
               :outbound=true />.</p>
-        </Block>
+        </Notice>
         <p>Unfortunately, that annoying cookie message will show forever until you give your consent. Sorry.</p>
       </section>
       <section class="block">
@@ -38,7 +38,7 @@
 
 <script>
   import Heading from '../components/generic/Heading'
-  import Block from '../components/generic/Block'
+  import Notice from '../components/generic/Notice'
   import Link from '../components/generic/Link'
   import VueTable from '../components/generic/VueTable'
   import Disclaimer from '../components/generic/Disclaimer'
@@ -47,7 +47,7 @@
     name: 'Privacy',
     components: {
       Heading,
-      Block,
+      Notice,
       Link,
       VueTable,
       Disclaimer,

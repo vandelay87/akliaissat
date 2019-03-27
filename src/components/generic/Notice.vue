@@ -1,12 +1,12 @@
 <template>
-  <article class="block" :class="type">
+  <article class="notice" :class="type">
     <slot></slot>
   </article>
 </template>
 
 <script>
   export default {
-    name: 'Block',
+    name: 'Notice',
     props: {
       type: {
         validator: function (value) {
@@ -21,7 +21,7 @@
 <style lang="scss" scoped>
   @import '../../assets/colours.scss';
 
-  .block {
+  .notice {
     position: relative;
     display: flex;
     background: $blue;

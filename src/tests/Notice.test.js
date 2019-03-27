@@ -1,9 +1,9 @@
 import { shallowMount } from '@vue/test-utils';
-import Block from '../components/generic/Block.vue';
+import Notice from '../components/generic/Notice.vue';
 
-describe('Block.vue', () => {
-  it('renders block', () => {
-    const wrapper = shallowMount(Block, {
+describe('Notice.vue', () => {
+  it('renders component', () => {
+    const wrapper = shallowMount(Notice, {
       propsData: {
         type: 'warning',
       },
