@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils';
-import Table from '../components/generic/Table.vue';
+import VueTable from '../components/generic/VueTable.vue';
 
-describe('Table.vue', () => {
+describe('VueTable.vue', () => {
   it('renders table', () => {
-    const wrapper = mount(Table, {
+    const wrapper = mount(VueTable, {
       propsData: {
         headers: ['1', '2'],
         data: ['3', '4'],

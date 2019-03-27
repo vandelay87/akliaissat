@@ -17,7 +17,7 @@
       <section class="block">
         <Heading title="Mmm, cookies" :size=2 />
         <p>If you're somehow interested, here are all of the cookies that are used across the website.</p>
-        <Table :headers="table.headers" :data="table.data" />
+        <VueTable :headers="table.headers" :data="table.data" />
         <Disclaimer text="Whenever I write some code that contains functionality that can create cookies, this table will be updated." />
       </section>
     </div>
@@ -40,7 +40,7 @@
   import Heading from '../components/generic/Heading'
   import Block from '../components/generic/Block'
   import Link from '../components/generic/Link'
-  import Table from '../components/generic/Table'
+  import VueTable from '../components/generic/VueTable'
   import Disclaimer from '../components/generic/Disclaimer'
 
   export default {
@@ -49,7 +49,7 @@
       Heading,
       Block,
       Link,
-      Table,
+      VueTable,
       Disclaimer,
     },
     data() {

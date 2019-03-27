@@ -48,7 +48,8 @@
       "!**/gridsome.server.js",
       "!**/src/main.js",
       "!**/src/tests/coverage/lcov-report/*.js",
-      "!**/src/tests/mocks/fileMock.js"
+      "!**/src/tests/mocks/fileMock.js",
+      "!**/dist/**"
     ],
     "coverageDirectory": "<rootDir>/src/tests/coverage"
   }

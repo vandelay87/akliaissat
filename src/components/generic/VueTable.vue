@@ -15,7 +15,7 @@
 
 <script>
   export default {
-    name: 'Table',
+    name: 'VueTable',
     props: {
       headers: {
         type: Array,
