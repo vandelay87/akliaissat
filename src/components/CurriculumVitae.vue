@@ -8,18 +8,18 @@
       <div class="subBlock">
         <Heading title="Comfortable" :size=3 />
         <div class="icons">
-          <div v-for="(skill, index) in skills.good" :key="index" class="icon">
-            <Icon :icon=skill[0] />
-            <span class="label">{{ skill[1] }}</span>
+          <div v-for="(skill, index) in technologies.good" :key="index" class="icon">
+            <Icon :icon=skill.name />
+            <span class="label">{{ skill.label }}</span>
           </div>
         </div>
       </div>
       <div class="subBlock">
         <Heading title="It's been a while" :size=3 />
         <div class="icons">
-          <div v-for="(skill, index) in skills.ok" :key="index" class="icon">
-            <Icon :icon=skill[0] />
-            <span class="label">{{ skill[1] }}</span>
+          <div v-for="(skill, index) in technologies.ok" :key="index" class="icon">
+            <Icon :icon=skill.name />
+            <span class="label">{{ skill.label }}</span>
           </div>
         </div>
       </div>
@@ -59,79 +59,20 @@
       Heading,
       Icon,
     },
-    data() {
-      return {
-        skills: {
-          good: [
-            [ 'javascript', 'JavaScript ES6', ],
-            [ 'react', 'React.js', ],
-            [ 'vue', 'Vue.js', ],
-            [ 'angular', 'Angular / AngularJS', ],
-            [ 'html', 'HTML5', ],
-            [ 'css', 'CSS3', ],
-            [ 'sass', 'SASS', ],
-            [ 'less', 'LESS', ],
-            [ 'git', 'GIT', ],
-            [ 'webpack', 'Webpack', ],
-            [ 'gulp', 'Gulp.js', ],
-            [ 'jasmine', 'Jasmine', ],
-            [ 'sql', 'SQL / MySQL', ],
-            [ 'photoshop', 'Photoshop', ],
-            [ 'confluence', 'Confluence', ],
-            [ 'jQuery', 'jQuery', ],
-          ],
-          ok: [
-            [ 'dotNet', '.NET' ],
-            [ 'php', 'PHP' ],
-            [ 'cSharp', 'C#' ],
-          ]
-        },
-        experience: [
-          {
-            key: 5,
-            company: 'Costa',
-            role: 'Front End Web Developer, December 2018 - Present',
-            description: 'Whilst still employed by Whitbread, as of April 2018, I was working for Costa. I\'m helping build the new Costa website, from deciding which technologies to use, to building modular components that can be consumed by our CMS - AEM.'
-          },
-          {
-            key: 4,
-            company: 'Whitbread',
-            role: 'Front End Web Developer, October 2016 - December 2018',
-            description: 'My first exposure to how a large company operates under agile methodologies. I began working on maintaining Whitbread\'s restaurant brands (Beefeater, Brewersfayre, Bar and Block). After a year, I then moved to the newly founded Costa web team.'
-          },
-          {
-            key: 3,
-            company: 'BDS',
-            role: 'Full Stack Web Developer, December 2013 - April 2016',
-            description: 'My responsibilities at BDS included; optimising/developing existing and new client websites, construction of our \'Blueberry\' CMS, database loading, script language conversion from classic ASP to PHP and backend server-side programming.'
-          },
-          {
-            key: 2,
-            company: 'SuperControl',
-            role: 'Full Stack Web Developer, June 2012 - November 2013',
-            description: 'During my time at Supercontrol I refined my web developing skills, particularly responsive web design and JavaScript. I implemented websites for clients from start to finish, and also had other responsibilities such as; database to API conversion and SEO optimisasion.'
-          },
-          {
-            key: 1,
-            company: 'Business Micros',
-            role: 'Software Developer, July 2011 - June 2012',
-            description: 'After graduating from university, I instantly began working for BDS as a software developer. Primarily, I worked on a Silverlight application that included VB.NET, SQL and web service technologies.'
-          },
-        ],
-        education: [
-          {
-            key: 2,
-            university: 'University of the West of Scotland',
-            award: 'Computing Honours Degree'
-          },
-          {
-            key: 1,
-            university: 'Kingston University',
-            award: 'Computing HND'
-          }
-        ]
-      }
-    }
+    props: {
+      technologies: {
+        type: Object,
+        required: true
+      },
+      education: {
+        type: Array,
+        required: true
+      },
+      experience: {
+        type: Array,
+        required: true
+      },
+    },
   }
 </script>
 

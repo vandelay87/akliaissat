@@ -3,7 +3,7 @@
     <div class="index">
       <Banner />
       <Bio :heading=getBioHeading :image=getBioImage />
-      <CurriculumVitae />
+      <CurriculumVitae :technologies=getCVTechnologies :education=getCVEducation :experience=getCVExperience />
       <Social :accounts=getSocial />
     </div>
   </Layout>
@@ -11,7 +11,7 @@
 
 <page-query>
   query Index {
-    allContentfulPage (filter: { id: { in: "3PgattG9PZQSySOOpAPJCY" } }) {
+    allContentfulPage(filter: { id: { in: "3PgattG9PZQSySOOpAPJCY" } }) {
       edges {
         node {
           title
@@ -45,6 +45,27 @@
                     name
                     account
                     address
+                  }
+                }
+                cv {
+                  skills {
+                    ok {
+                      name
+                      label
+                    }
+                    good {
+                      name
+                      label
+                    }
+                  }
+                  education {
+                    award
+                    university
+                  }
+                  experience {
+                    role
+                    company
+                    description
                   }
                 }
               }
@@ -83,11 +104,20 @@
       getSocial() {
         return (this.$page.allContentfulPage.edges[0].node.layout[1].fields.name === "Social" && this.$page.allContentfulPage.edges[0].node.layout[1].fields.accounts.account) ? this.$page.allContentfulPage.edges[0].node.layout[1].fields.accounts.account : {};
       },
+      getCVTechnologies() {
+        return (this.$page.allContentfulPage.edges[0].node.layout[2].fields.name === "Curriculum Vitae" && this.$page.allContentfulPage.edges[0].node.layout[2].fields.cv.skills) ? this.$page.allContentfulPage.edges[0].node.layout[2].fields.cv.skills : {};
+      },
+      getCVEducation() {
+        return (this.$page.allContentfulPage.edges[0].node.layout[2].fields.name === "Curriculum Vitae" && this.$page.allContentfulPage.edges[0].node.layout[2].fields.cv.education) ? this.$page.allContentfulPage.edges[0].node.layout[2].fields.cv.education : {};
+      },
+      getCVExperience() {
+        return (this.$page.allContentfulPage.edges[0].node.layout[2].fields.name === "Curriculum Vitae" && this.$page.allContentfulPage.edges[0].node.layout[2].fields.cv.experience) ? this.$page.allContentfulPage.edges[0].node.layout[2].fields.cv.experience : {};
+      }
     },
     metaInfo() {
       return {
         title: this.getPageTitle,
       }
-    }
+    },
   }
 </script>
