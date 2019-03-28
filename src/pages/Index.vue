@@ -11,7 +11,13 @@
 
 <page-query>
   query Index {
-    allContentfulPage(filter: { id: { in: "3PgattG9PZQSySOOpAPJCY" } }) {
+    allContentfulPage(
+      filter: {
+        id: {
+          in: "3PgattG9PZQSySOOpAPJCY"
+        }
+      }
+    ){
       edges {
         node {
           title

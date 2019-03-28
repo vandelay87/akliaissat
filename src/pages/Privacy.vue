@@ -26,7 +26,13 @@
 
 <page-query>
   query Privacy {
-    allContentfulPage (filter: { id: { in: "3JNGhUtTBl4dnSu7I0oqKd" } }) {
+    allContentfulPage (
+      filter: {
+        id: {
+          in: "3JNGhUtTBl4dnSu7I0oqKd"
+        }
+      }
+    ){
       edges {
         node {
           title
