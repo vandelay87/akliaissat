@@ -1,13 +1,18 @@
 .wrapper {
   width: 100%;
-  max-width: 61.250em;
+  max-width: 61.25em;
   margin: auto;
 }
 
 .wrapperPadding {
   width: 100%;
-  max-width: 61.250em;
+  max-width: 61.25em;
   margin: auto;
   padding: 0 1em;
   box-sizing: border-box;
+}
+
+.article {
+  min-height: 45em;
+  margin: 5em auto;
 }

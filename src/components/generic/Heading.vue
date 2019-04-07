@@ -11,62 +11,62 @@
 </template>
 
 <script>
-  export default {
-    name: 'Heading',
-    props: {
-      title: {
-        type: String,
-        required: true
-      },
-      size: Number,
-      subtitle: String,
-      align: {
-        validator: function (value) {
-          return ['left', 'right', 'centre'].indexOf(value) !== -1
-        },
-        type: String,
-      }
+export default {
+  name: "Heading",
+  props: {
+    title: {
+      type: String,
+      required: true
     },
+    size: Number,
+    subtitle: String,
+    align: {
+      validator: function(value) {
+        return ["left", "right", "centre"].indexOf(value) !== -1;
+      },
+      type: String
+    }
   }
+};
 </script>
 
 <style lang="scss" scoped>
-  @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 
-  .header {
-    font-family: 'Roboto', sans-serif;
+.header {
+  font-family: "Roboto", sans-serif;
 
-    &.left {
-      text-align: left;
-    }
-
-    &.right {
-      text-align: right;
-    }
-
-    &.centre {
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 3em;
-    }
-
-    h2 {
-      font-size: 2.25em;
-    }
-
-    h3 {
-      font-size: 1.75em;
-    }
-
-    h4 {
-      font-size: 1.125em;
-    }
-
-    .subtitle {
-      font-size: 1em;
-      font-weight: 600;
-    }
+  &.left {
+    text-align: left;
   }
+
+  &.right {
+    text-align: right;
+  }
+
+  &.centre {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2.25em;
+  }
+
+  h3 {
+    font-size: 1.75em;
+  }
+
+  h4 {
+    font-size: 1.125em;
+  }
+
+  .subtitle {
+    font-size: 1.125em;
+    line-height: 1.6;
+  }
+}
 </style>
