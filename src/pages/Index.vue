@@ -24,6 +24,7 @@
       edges {
         node {
           title
+          description
           layout {
             ... on ContentfulPageLayout {
               fields {
@@ -107,6 +108,11 @@ export default {
       return this.$page.allContentfulPage.edges[0].node.title
         ? this.$page.allContentfulPage.edges[0].node.title
         : "Index";
+    },
+    getPageDescription() {
+      return this.$page.allContentfulPage.edges[0].node.description
+        ? this.$page.allContentfulPage.edges[0].node.description
+        : "";
     },
     getBannerImage() {
       return this.$page.allContentfulPage.edges[0].node.layout[0].fields
@@ -196,7 +202,14 @@ export default {
   },
   metaInfo() {
     return {
-      title: this.getPageTitle
+      title: this.getPageTitle,
+      meta: [
+        {
+          key: "description",
+          name: "description",
+          content: this.getPageDescription
+        }
+      ]
     };
   }
 };

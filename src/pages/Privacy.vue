@@ -41,6 +41,7 @@
       edges {
         node {
           title
+          description
         }
       }
     }
@@ -87,11 +88,23 @@ export default {
       return this.$page.allContentfulPage.edges[0].node.title
         ? this.$page.allContentfulPage.edges[0].node.title
         : "Privacy";
+    },
+    getPageDescription() {
+      return this.$page.allContentfulPage.edges[0].node.description
+        ? this.$page.allContentfulPage.edges[0].node.description
+        : "";
     }
   },
   metaInfo() {
     return {
-      title: this.getPageTitle
+      title: this.getPageTitle,
+      meta: [
+        {
+          key: "description",
+          name: "description",
+          content: this.getPageDescription
+        }
+      ]
     };
   }
 };
