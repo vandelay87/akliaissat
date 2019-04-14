@@ -18,7 +18,7 @@
         <p>This website is a WIP. It's getting better all the time.</p>
       </Notice>
       <p>I made this website because I owned the domain for a while, I wanted to learn Vue.js and I wanted to have a place where I can make and show off cool stuff!</p>
-      <p>I like stuff. Stuff like socialism, The Beatles, cat GIFs, football, computer games, IPAs, technology, silly/dark humour, among other things. Recently I've often found myself going down a rabbit hole of blackhole videos on YouTube.</p>
+      <p>I like stuff. Stuff like socialism, The Beatles, cat GIFs, football, science, computer games, IPAs, technology, silly/dark humour, among other things. Recently I've been into going down a rabbit hole of blackhole videos on YouTube. Time well spent me thinks.</p>
     </div>
   </article>
 </template>
