@@ -76,7 +76,7 @@ export default {
           [
             "Cookie Consent",
             "cookie_consent",
-            "If you decide to give your consent I create this cookie so I know if I have permission to create other cookies."
+            "If you decide to give your consent I create this cookie so I know if I have permission to create other cookies. If you decline a session cookie is created instead."
           ]
         ]
       }
