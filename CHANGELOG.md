@@ -13,4 +13,4 @@ All notable changes to this project will be documented in this file.
 - All relevant configuration files.
 - Google analaytics.
 - Contentful integration.
-- Readme and changelog documentaion.
+- Readme and changelog documentation.
