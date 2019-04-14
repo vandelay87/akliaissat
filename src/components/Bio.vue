@@ -14,7 +14,11 @@
         <Link text="Vue.js" path="https://vuejs.org/" :outbound="true"/>. You can have a look at the code on my
         <Link text="GitHub" path="https://github.com/vandelay87/akliaissat" :outbound="true"/>.
       </p>
+      <Notice type="warning">
+        <p>This website is a WIP. It's getting better all the time.</p>
+      </Notice>
       <p>I made this website because I owned the domain for a while, I wanted to learn Vue.js and I wanted to have a place where I can make and show off cool stuff!</p>
+      <p>I like stuff. Stuff like socialism, The Beatles, cat GIFs, football, computer games, IPAs, technology, silly/dark humour, among other things.</p>
     </div>
   </article>
 </template>
@@ -23,13 +27,15 @@
 import Heading from "./generic/Heading";
 import Picture from "./generic/Picture";
 import Link from "./generic/Link";
+import Notice from "./generic/Notice";
 
 export default {
   name: "Bio",
   components: {
     Heading,
     Picture,
-    Link
+    Link,
+    Notice
   },
   props: {
     heading: {
@@ -64,6 +70,10 @@ export default {
   .body {
     font-size: 1.125em;
     line-height: 1.6;
+
+    > p {
+      margin: 1.375em auto;
+    }
   }
 }
 </style>
