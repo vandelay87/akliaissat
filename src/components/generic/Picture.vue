@@ -1,6 +1,6 @@
 <template>
-  <figure :class="align" class="figure">
-    <g-image :src="path" class="image" :alt="alt" :width="width"/>
+  <figure :class="[align, {banner: isBanner}]" class="figure" :style="getDimensions">
+    <g-image :src="path" class="image" :alt="alt"/>
     <figcaption v-if="caption" class="caption">{{ caption }}</figcaption>
   </figure>
 </template>
@@ -24,7 +24,17 @@ export default {
       },
       type: String
     },
-    width: String
+    width: String,
+    height: String,
+    isBanner: Boolean
+  },
+  computed: {
+    getDimensions: function() {
+      return {
+        maxWidth: this.width ? this.width + "px" : "none",
+        height: this.height ? this.height + "px" : "none"
+      };
+    }
   }
 };
 </script>
@@ -35,7 +45,6 @@ export default {
 
 .figure {
   margin: 2em auto;
-  max-width: 342px;
 
   @include breakpoint(tablet) {
     margin: auto;
@@ -54,6 +63,7 @@ export default {
   .image {
     vertical-align: middle;
     width: 100%;
+    height: 100%;
   }
 
   .caption {
@@ -62,6 +72,14 @@ export default {
     background: $blue;
     color: $white;
     padding: 1em;
+  }
+
+  &.banner {
+    margin: auto;
+
+    .image {
+      object-fit: cover;
+    }
   }
 }
 </style>
