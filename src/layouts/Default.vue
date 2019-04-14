@@ -37,7 +37,7 @@ export default {
       let cookieExists = false;
 
       for (var i = 0; i < cookies.length; i++) {
-        if (cookies[i].trim() === this.cookie.name + "=true")
+        if (cookies[i].trim().split("=")[0] === this.cookie.name)
           cookieExists = true;
       }
 
