@@ -1,60 +1,57 @@
 <template>
   <div class="notice" :class="type">
+    <Alert v-if="type === 'warning'" class="icon" width="50" height="50"/>
+    <Alert v-else-if="type === 'error'" class="icon"/>
+    <Information v-else class="icon"/>
     <slot></slot>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'Notice',
-    props: {
-      type: {
-        validator: function (value) {
-          return ['warning', 'danger'].indexOf(value) !== -1
-        },
-        type: String,
+import Information from "../../assets/images/information.svg";
+import Alert from "../../assets/images/alert.svg";
+
+export default {
+  name: "Notice",
+  components: {
+    Information,
+    Alert
+  },
+  props: {
+    type: {
+      validator: function(value) {
+        return ["warning", "danger"].indexOf(value) !== -1;
       },
+      type: String
     }
   }
+};
 </script>
 
 <style lang="scss" scoped>
-  @import '../../assets/colours.scss';
+@import "../../assets/colours.scss";
 
-  .notice {
-    position: relative;
-    display: flex;
-    background: $blue;
-    color: $white;
-    padding: 0 2em 0 4em;
+.notice {
+  position: relative;
+  display: flex;
+  background: $blue;
+  color: $white;
+  padding: 0 2em 0 4em;
 
-    &:before {
-      content: '';
-      background: no-repeat url('../../assets/images/information.svg');
-      background-size: cover;
-      position: absolute;
-      height: 1.875em;
-      width: 1.875em;
-      top: 0.75em;
-      left: 1.25em;
-    }
-
-    &.warning {
-      background: $warning;
-
-      &:before {
-        background: no-repeat url('../../assets/images/alert.svg');
-        background-size: cover;
-      }
-    }
-
-    &.error {
-      background: $error;
-
-      &:before {
-        background: no-repeat url('../../assets/images/alert.svg');
-        background-size: cover;
-      }
-    }
+  &.warning {
+    background: $warning;
   }
+
+  &.error {
+    background: $error;
+  }
+
+  .icon {
+    position: absolute;
+    height: 1.875em;
+    width: 1.875em;
+    top: 0.75em;
+    left: 1.25em;
+  }
+}
 </style>
