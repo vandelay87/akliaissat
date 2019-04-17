@@ -10,9 +10,6 @@ module.exports = {
         id: process.env.AKLIAISSAT_ANALYTICS_KEY
           ? process.env.AKLIAISSAT_ANALYTICS_KEY
           : 'GA_TRACKING_ID',
-        autoTracking: {
-          exception: true
-        },
         debug: {
           enabled: !isProd,
           sendHitTask: isProd
@@ -31,5 +28,11 @@ module.exports = {
         typeName: 'Contentful'
       }
     }
-  ]
+  ],
+  chainWebpack: config => {
+    const svgRule = config.module.rule('svg');
+
+    svgRule.uses.clear();
+    svgRule.use('vue-svg-loader').loader('vue-svg-loader');
+  }
 };

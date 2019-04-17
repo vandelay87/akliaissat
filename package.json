@@ -12,20 +12,25 @@
   },
   "dependencies": {
     "@gridsome/plugin-google-analytics": "^0.1.0",
-    "@gridsome/source-contentful": "^0.2.1",
-    "gridsome": "^0.5.0"
+    "@gridsome/source-contentful": "^0.2.2",
+    "gridsome": "^0.5.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.0",
+    "@babel/core": "^7.4.3",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-env": "^7.4.3",
     "@vue/test-utils": "^1.0.0-beta.29",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^24.5.0",
-    "jest": "^24.5.0",
+    "babel-jest": "^24.7.1",
+    "jest": "^24.7.1",
     "node-sass": "^4.11.0",
+    "npm-force-resolutions": "0.0.2",
     "sass-loader": "^7.1.0",
-    "vue-jest": "^3.0.4"
+    "vue-jest": "^3.0.4",
+    "vue-svg-loader": "^0.12.0"
+  },
+  "resolutions": {
+    "gridsome/vue-router": "3.0.2"
   },
   "jest": {
     "moduleFileExtensions": [
