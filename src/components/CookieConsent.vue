@@ -20,7 +20,7 @@
 
 <script>
 import Heading from "./generic/Heading";
-import Button from "./generic/Button";
+import Button from "./generic/Button/Button";
 import Link from "./generic/Link";
 
 export default {
