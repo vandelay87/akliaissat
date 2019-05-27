@@ -1,4 +1,6 @@
 const isProd = process.env.NODE_ENV === 'production';
+const path = require('path');
+const glob = require('glob');
 
 module.exports = {
   siteName: 'Akli',
@@ -34,5 +36,15 @@ module.exports = {
 
     svgRule.uses.clear();
     svgRule.use('vue-svg-loader').loader('vue-svg-loader');
+  },
+  css: {
+    loaderOptions: {
+      scss: {
+        sourceMap: true,
+        includePaths: glob
+          .sync(path.join(__dirname, 'node_modules/@material'))
+          .map(dir => path.dirname(dir))
+      }
+    }
   }
 };

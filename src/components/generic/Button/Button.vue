@@ -1,5 +1,9 @@
 <template>
-  <button @click="onClick" :class="customClass" class="button">{{ value }}</button>
+  <button
+    @click="onClick"
+    :class="customClass"
+    class="button mdc-button mdc-button--unelevated"
+  >{{ value }}</button>
 </template>
 
 <script>
@@ -26,6 +30,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../../assets/colours.scss";
+@import "~@material/button/mdc-button";
 
 .button {
   display: block;

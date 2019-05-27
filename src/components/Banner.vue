@@ -1,11 +1,6 @@
 <template>
   <article class="banner">
-    <Picture
-      :path="image.image.fields.file.url"
-      :alt="image.alt"
-      :height="image.height"
-      :isBanner="true"
-    />
+    <Picture :path="image.image.file.url" :alt="image.alt" :height="image.height" :isBanner="true"/>
     <div class="heading">
       <Heading :title="title" :subtitle="subtitle" :align="align"/>
     </div>

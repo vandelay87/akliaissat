@@ -2,7 +2,7 @@
   <article class="bio">
     <Heading :title="heading.title" :align="heading.align"/>
     <Picture
-      :path="image.image.fields.file.url"
+      :path="image.image.file.url"
       :alt="image.alt"
       :align="image.align"
       :caption="image.caption"
