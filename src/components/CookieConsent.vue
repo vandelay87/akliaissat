@@ -10,8 +10,8 @@
           </p>
         </div>
         <div class="block buttons">
-          <Button value="Cool" :onClick="createCookie.bind(null, cookie.name, false)"/>
-          <Button value="Not Cool" :onClick="createCookie.bind(null, cookie.name, true)"/>
+          <VueButton value="Cool" :onClick="createCookie.bind(null, cookie.name, false)"/>
+          <VueButton value="Not Cool" :onClick="createCookie.bind(null, cookie.name, true)"/>
         </div>
       </section>
     </article>
@@ -20,14 +20,14 @@
 
 <script>
 import Heading from "./generic/Heading";
-import Button from "./generic/Button/Button";
+import VueButton from "./generic/VueButton/VueButton";
 import Link from "./generic/Link";
 
 export default {
   name: "CookieConsent",
   components: {
     Heading,
-    Button,
+    VueButton,
     Link
   },
   props: {

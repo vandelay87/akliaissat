@@ -49,6 +49,7 @@ export default {
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import "../assets/theme.scss";
 
 body {
   margin: 0;
