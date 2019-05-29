@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div class="layout mdc-typography">
     <transition name="fade" appear>
       <main>
         <slot/>
@@ -48,15 +48,13 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 @import "../assets/theme.scss";
+@import "@material/typography/mdc-typography";
 
 body {
   margin: 0;
 
   .layout {
-    font-family: "Open Sans", sans-serif;
-
     .fade-enter-active {
       transition: opacity 0.4s;
     }

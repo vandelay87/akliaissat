@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Heading from "./generic/Heading";
+import Heading from "./generic/heading/Heading";
 import VueButton from "./generic/VueButton/VueButton";
 import Link from "./generic/Link";
 

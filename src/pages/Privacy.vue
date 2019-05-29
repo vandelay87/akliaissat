@@ -49,7 +49,7 @@
 </page-query>
 
 <script>
-import Heading from "../components/generic/Heading";
+import Heading from "../components/generic/heading/Heading";
 import Notice from "../components/generic/Notice";
 import Link from "../components/generic/Link";
 import VueTable from "../components/generic/VueTable";

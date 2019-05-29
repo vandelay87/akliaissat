@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import Heading from "./generic/Heading";
+import Heading from "./generic/heading/Heading";
 import Icon from "./generic/Icon";
 
 export default {
