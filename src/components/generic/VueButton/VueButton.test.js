@@ -1,5 +1,6 @@
 import { mount, shallowMount } from '@vue/test-utils';
 import VueButton from './VueButton.vue';
+import sinon from 'sinon';
 
 describe('VueButton.vue', () => {
   it('renders button', () => {
@@ -65,16 +66,43 @@ describe('VueButton.vue', () => {
     expect(wrapper.vm.click).toHaveBeenCalledTimes(0);
   });
 
+  it('adds ripple', () => {
+    const wrapper = mount(VueButton, {
+      propsData: {
+        value: 'click me',
+        click: () => {}
+      }
+    });
+
+    expect(typeof wrapper.vm.ripple).toBe('object');
+  });
+
+  it('destroys ripple', () => {
+    const spy = sinon.stub();
+
+    mount(VueButton, {
+      propsData: {
+        value: 'click me',
+        click: () => {}
+      },
+      destroyed() {
+        spy();
+      }
+    }).destroy();
+    expect(spy.calledOnce).toBe(true);
+  });
+
   it('adds icon', () => {
     const wrapper = mount(VueButton, {
       propsData: {
         value: 'click me',
-        click: jest.fn(),
+        click: () => {},
         icon: 'warning'
       }
     });
 
     expect(wrapper.props().icon).toBe('warning');
+    expect(wrapper.contains('i')).toBe(true);
     expect(wrapper.html()).toContain('mdc-button__icon');
   });
 });

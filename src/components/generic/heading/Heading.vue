@@ -17,8 +17,8 @@
       v-else-if="size === 6"
       :class="override ? override : 'mdc-typography--headline6'"
     >{{ title }}</h6>
+    <h6 v-else-if="subtitle" :class="override ? override : 'mdc-typography--subtitle1'">{{ title }}</h6>
     <h1 v-else :class="override ? override : 'mdc-typography--headline1'">{{ title }}</h1>
-    <p v-if="subtitle" :class="override ? override : 'mdc-typography--subtitle1'">{{ subtitle }}</p>
   </header>
 </template>
 
@@ -31,13 +31,13 @@ export default {
       required: true
     },
     size: Number,
-    subtitle: String,
     align: {
       validator: function(value) {
         return ["left", "right", "centre"].indexOf(value) !== -1;
       },
       type: String
     },
+    subtitle: Boolean,
     override: {
       validator: function(value) {
         return (

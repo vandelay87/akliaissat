@@ -20,7 +20,7 @@
 
 <script>
 import Heading from "./generic/heading/Heading";
-import VueButton from "./generic/VueButton/VueButton";
+import VueButton from "./generic/vueButton/VueButton";
 import Link from "./generic/Link";
 
 export default {

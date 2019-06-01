@@ -2,7 +2,7 @@
   <article class="banner">
     <Picture :path="image.image.file.url" :alt="image.alt" :height="image.height" :isBanner="true"/>
     <div class="heading">
-      <Heading :title="title" :subtitle="subtitle" :align="align"/>
+      <Heading :title="title" :align="align"/>
     </div>
   </article>
 </template>

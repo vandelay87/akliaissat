@@ -37,6 +37,11 @@ export default {
     dense: Boolean,
     icon: String
   },
+  data() {
+    return {
+      ripple: MDCRipple
+    };
+  },
   mounted() {
     this.ripple = new MDCRipple(this.$refs.button);
   },

@@ -30,7 +30,8 @@
       </div>
       <div class="subBlock">
         <div v-for="exp in experience" :key="exp.key">
-          <Heading :title="exp.company" :subtitle="exp.role" :size="3"/>
+          <Heading :title="exp.company" :size="3"/>
+          <Heading :title="exp.role" :subtitle="true"/>
           <p class="info">{{ exp.description }}</p>
         </div>
       </div>

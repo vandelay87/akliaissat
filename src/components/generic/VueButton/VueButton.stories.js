@@ -46,5 +46,6 @@ storiesOf('Button', module)
         <div class="mdc-layout-grid__cell">
           <VueButton value="star" :click="() => {}" icon="star"/>
         </div>
-      </div>`
+      </div>
+    </div>`
   }));
