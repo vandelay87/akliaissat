@@ -1,8 +1,13 @@
 <template>
   <article class="banner">
-    <Picture :path="image.image.file.url" :alt="image.alt" :height="image.height" :isBanner="true"/>
+    <Picture
+      :path="image.image.file.url"
+      :alt="image.alt"
+      :height="setImageHeight"
+      :isBanner="true"
+    />
     <div class="heading">
-      <Heading :title="title" :align="align"/>
+      <Heading :title="title" :align="align" />
     </div>
   </article>
 </template>
@@ -31,6 +36,11 @@ export default {
     },
     align: {
       type: String
+    }
+  },
+  computed: {
+    setImageHeight() {
+      return this.image.height ? this.image.height + "px" : "none";
     }
   }
 };

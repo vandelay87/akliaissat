@@ -1,18 +1,18 @@
 <template>
   <article class="bio">
-    <Heading :title="heading.title" :align="heading.align"/>
+    <Heading :title="heading.title" :align="heading.align" />
     <Picture
       :path="image.image.file.url"
       :alt="image.alt"
       :align="image.align"
       :caption="image.caption"
-      :width="image.width"
+      :width="setImageWidth"
     />
     <div class="body">
       <p>
         My name is Akli, I'm {{ getAge }} years old and I'm a web developer. For some reason you've stumbled across my website. I feel honoured! I made this website using a really cool framework called
-        <Link text="Vue.js" path="https://vuejs.org/" :outbound="true"/>. You can have a look at the code on my
-        <Link text="GitHub" path="https://github.com/vandelay87/akliaissat" :outbound="true"/>.
+        <Link text="Vue.js" path="https://vuejs.org/" :outbound="true" />. You can have a look at the code on my
+        <Link text="GitHub" path="https://github.com/vandelay87/akliaissat" :outbound="true" />.
       </p>
       <Notice type="warning">
         <p>This website is a WIP. It's getting better all the time.</p>
@@ -53,6 +53,9 @@ export default {
       const age = new Date(Date.now() - birthday.getTime());
 
       return Math.abs(age.getUTCFullYear() - 1970);
+    },
+    setImageWidth() {
+      return this.image.width ? this.image.width + "px" : "none";
     }
   }
 };

@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import Social from '../components/Social.vue';
+import Social from './Social.vue';
 
 describe('Social.vue', () => {
   it('renders component', () => {

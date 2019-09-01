@@ -50,6 +50,7 @@ export default {
 <style lang="scss">
 @import "../assets/theme.scss";
 @import "@material/typography/mdc-typography";
+@import "@material/layout-grid/mdc-layout-grid";
 
 body {
   margin: 0;

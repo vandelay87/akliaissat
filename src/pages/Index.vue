@@ -7,13 +7,13 @@
         :subtitle="getBannerSubtitle"
         :align="getBannerAlign"
       />
-      <Bio :heading="getBioHeading" :image="getBioImage"/>
+      <Bio :heading="getBioHeading" :image="getBioImage" />
       <CurriculumVitae
         :technologies="getCVTechnologies"
         :education="getCVEducation"
         :experience="getCVExperience"
       />
-      <Social :accounts="getSocial"/>
+      <Social :heading="getSocialHeading" :socialAccounts="getSocialAccounts" />
     </div>
   </Layout>
 </template>
@@ -91,11 +91,20 @@ query Index {
           }
           ... on ContentfulSocial {
             name
+            heading {
+              title
+              align
+            }
             accounts {
-              account {
-                name
-                account
-                address
+              name
+              username
+              profileUrl
+              followUrl
+              icon {
+                description
+                file {
+                  url
+                }
               }
             }
           }
@@ -110,7 +119,7 @@ query Index {
 import Banner from "../components/Banner";
 import Bio from "../components/Bio";
 import CurriculumVitae from "../components/CurriculumVitae";
-import Social from "../components/Social";
+import Social from "../components/social/Social";
 
 export default {
   name: "Index",
@@ -173,33 +182,39 @@ export default {
         ? this.$page.allContentfulPage.edges[0].node.layout[1].image
         : {};
     },
-    getSocial() {
-      return this.$page.allContentfulPage.edges[0].node.layout[2].name ===
-        "Social" &&
-        this.$page.allContentfulPage.edges[0].node.layout[2].accounts.account
-        ? this.$page.allContentfulPage.edges[0].node.layout[2].accounts.account
-        : {};
-    },
     getCVTechnologies() {
-      return this.$page.allContentfulPage.edges[0].node.layout[3].name ===
+      return this.$page.allContentfulPage.edges[0].node.layout[2].name ===
         "Curriculum Vitae" &&
-        this.$page.allContentfulPage.edges[0].node.layout[3].cv.skills
-        ? this.$page.allContentfulPage.edges[0].node.layout[3].cv.skills
+        this.$page.allContentfulPage.edges[0].node.layout[2].cv.skills
+        ? this.$page.allContentfulPage.edges[0].node.layout[2].cv.skills
         : {};
     },
     getCVEducation() {
-      return this.$page.allContentfulPage.edges[0].node.layout[3].name ===
+      return this.$page.allContentfulPage.edges[0].node.layout[2].name ===
         "Curriculum Vitae" &&
-        this.$page.allContentfulPage.edges[0].node.layout[3].cv.education
-        ? this.$page.allContentfulPage.edges[0].node.layout[3].cv.education
-        : {};
+        this.$page.allContentfulPage.edges[0].node.layout[2].cv.education
+        ? this.$page.allContentfulPage.edges[0].node.layout[2].cv.education
+        : [];
     },
     getCVExperience() {
-      return this.$page.allContentfulPage.edges[0].node.layout[3].name ===
+      return this.$page.allContentfulPage.edges[0].node.layout[2].name ===
         "Curriculum Vitae" &&
-        this.$page.allContentfulPage.edges[0].node.layout[3].cv.experience
-        ? this.$page.allContentfulPage.edges[0].node.layout[3].cv.experience
+        this.$page.allContentfulPage.edges[0].node.layout[2].cv.experience
+        ? this.$page.allContentfulPage.edges[0].node.layout[2].cv.experience
+        : [];
+    },
+    getSocialHeading() {
+      return this.$page.allContentfulPage.edges[0].node.layout[3].name ===
+        "Social" && this.$page.allContentfulPage.edges[0].node.layout[3].heading
+        ? this.$page.allContentfulPage.edges[0].node.layout[3].heading
         : {};
+    },
+    getSocialAccounts() {
+      return this.$page.allContentfulPage.edges[0].node.layout[3].name ===
+        "Social" &&
+        this.$page.allContentfulPage.edges[0].node.layout[3].accounts
+        ? this.$page.allContentfulPage.edges[0].node.layout[3].accounts
+        : [];
     }
   },
   metaInfo() {

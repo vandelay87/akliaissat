@@ -15,6 +15,7 @@
     "@gridsome/plugin-google-analytics": "^0.1.0",
     "@gridsome/source-contentful": "^0.2.3",
     "@material/button": "^2.1.1",
+    "@material/card": "^2.3.0",
     "@material/layout-grid": "^0.41.0",
     "@material/ripple": "^2.1.1",
     "@material/theme": "^1.1.0",
@@ -67,6 +68,7 @@
       "!**/gridsome.config.js",
       "!**/gridsome.server.js",
       "!**/src/main.js",
+      "!**/*.stories.js",
       "!**/src/tests/coverage/lcov-report/*.js",
       "!**/src/tests/mocks/fileMock.js",
       "!**/dist/**"
