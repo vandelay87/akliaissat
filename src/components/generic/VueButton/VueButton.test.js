@@ -1,13 +1,13 @@
 import { mount, shallowMount } from '@vue/test-utils';
-import VueButton from './VueButton.vue';
 import sinon from 'sinon';
+import VueButton from './VueButton.vue';
 
 describe('VueButton.vue', () => {
   it('renders button', () => {
     const wrapper = mount(VueButton, {
       propsData: {
         value: 'click me',
-        click: () => {}
+        click: () => { }
       }
     });
 
@@ -34,7 +34,7 @@ describe('VueButton.vue', () => {
     const wrapper = mount(VueButton, {
       propsData: {
         value: 'click me',
-        click: () => {},
+        click: () => { },
         raised: true,
         unelevated: true,
         outlined: true,
@@ -70,7 +70,7 @@ describe('VueButton.vue', () => {
     const wrapper = mount(VueButton, {
       propsData: {
         value: 'click me',
-        click: () => {}
+        click: () => { }
       }
     });
 
@@ -83,7 +83,7 @@ describe('VueButton.vue', () => {
     mount(VueButton, {
       propsData: {
         value: 'click me',
-        click: () => {}
+        click: () => { }
       },
       destroyed() {
         spy();
@@ -96,7 +96,7 @@ describe('VueButton.vue', () => {
     const wrapper = mount(VueButton, {
       propsData: {
         value: 'click me',
-        click: () => {},
+        click: () => { },
         icon: 'warning'
       }
     });

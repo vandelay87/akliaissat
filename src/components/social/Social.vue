@@ -1,5 +1,5 @@
 <template>
-  <section class="mdc-layout-grid social">
+  <section class="mdc-layout-grid">
     <Heading :title="heading.title" :align="heading.align" :size="heading.size" />
     <div class="container mdc-layout-grid__inner">
       <div
