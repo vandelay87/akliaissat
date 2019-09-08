@@ -26,11 +26,6 @@
           <div class="mdc-card__actions">
             <div class="mdc-card__action-buttons">
               <VueButton value="view" :click="openUrl(account.profileUrl)" />
-              <VueButton
-                v-if="account.followUrl"
-                value="follow"
-                :click="openUrl(account.followUrl)"
-              />
             </div>
           </div>
         </article>
@@ -112,8 +107,16 @@ export default {
     .content {
       padding: 1rem;
 
-      .text {
+      h2 {
         margin: 0;
+      }
+
+      h3 {
+        margin: 0;
+      }
+
+      .text {
+        margin: 1em 0 0;
       }
     }
   }

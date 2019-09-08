@@ -1,25 +1,29 @@
 <template>
-  <header class="header" :class="align">
-    <h2 v-if="size === 2" :class="override ? override : 'mdc-typography--headline2'">{{ title }}</h2>
-    <h3
-      v-else-if="size === 3"
-      :class="override ? override : 'mdc-typography--headline3'"
-    >{{ title }}</h3>
-    <h4
-      v-else-if="size === 4"
-      :class="override ? override : 'mdc-typography--headline4'"
-    >{{ title }}</h4>
-    <h5
-      v-else-if="size === 5"
-      :class="override ? override : 'mdc-typography--headline5'"
-    >{{ title }}</h5>
-    <h6
-      v-else-if="size === 6"
-      :class="override ? override : 'mdc-typography--headline6'"
-    >{{ title }}</h6>
-    <h6 v-else-if="subtitle" :class="override ? override : 'mdc-typography--subtitle1'">{{ title }}</h6>
-    <h1 v-else :class="override ? override : 'mdc-typography--headline1'">{{ title }}</h1>
-  </header>
+  <h2
+    v-if="size === 2"
+    :class="[override ? override : 'mdc-typography--headline2', align]"
+  >{{ title }}</h2>
+  <h3
+    v-else-if="size === 3"
+    :class="[override ? override : 'mdc-typography--headline3', align]"
+  >{{ title }}</h3>
+  <h4
+    v-else-if="size === 4"
+    :class="[override ? override : 'mdc-typography--headline4', align]"
+  >{{ title }}</h4>
+  <h5
+    v-else-if="size === 5"
+    :class="[override ? override : 'mdc-typography--headline5', align]"
+  >{{ title }}</h5>
+  <h6
+    v-else-if="size === 6"
+    :class="[override ? override : 'mdc-typography--headline6', align]"
+  >{{ title }}</h6>
+  <h6
+    v-else-if="subtitle"
+    :class="[override ? override : 'mdc-typography--subtitle1', align]"
+  >{{ title }}</h6>
+  <h1 v-else :class="[override ? override : 'mdc-typography--headline1', align]">{{ title }}</h1>
 </template>
 
 <script>
@@ -60,17 +64,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.header {
-  &.left {
-    text-align: left;
-  }
+.left {
+  text-align: left;
+}
 
-  &.right {
-    text-align: right;
-  }
+.right {
+  text-align: right;
+}
 
-  &.centre {
-    text-align: center;
-  }
+.centre {
+  text-align: center;
 }
 </style>

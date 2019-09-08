@@ -99,7 +99,6 @@ query Index {
               name
               username
               profileUrl
-              followUrl
               icon {
                 description
                 file {
