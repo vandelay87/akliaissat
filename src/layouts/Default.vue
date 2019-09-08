@@ -5,7 +5,7 @@
         <slot/>
       </main>
     </transition>
-    <CookieConsent :cookie="cookie"/>
+    <!-- <CookieConsent :cookie="cookie"/> -->
     <Footer/>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <figure :class="[align, {banner: isBanner}]" class="figure" :style="getDimensions">
-    <g-image :src="path" class="image" :alt="alt" />
+    <img :src="path" class="image" :alt="alt" />
     <figcaption v-if="caption" class="caption">{{ caption }}</figcaption>
   </figure>
 </template>

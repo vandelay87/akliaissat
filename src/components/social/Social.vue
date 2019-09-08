@@ -5,8 +5,8 @@
       <div
         v-for="account in socialAccounts"
         :key="account.key"
-        v-bind:class="account.name"
-        class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-6-desktop"
+        class="mdc-layout-grid__cell"
+        v-bind:class="setGridClass"
       >
         <article class="mdc-card account">
           <div class="icon">
@@ -33,7 +33,6 @@
               />
             </div>
           </div>
-          <!-- </div> -->
         </article>
       </div>
     </div>
@@ -62,15 +61,26 @@ export default {
       required: true
     }
   },
-  mounted() {
-    console.log(this.accounts);
+  computed: {
+    setGridClass: function() {
+      return {
+        "mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-12-desktop":
+          this.socialAccounts.length === 1,
+        "mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-6-desktop":
+          this.socialAccounts.length === 2
+      };
+    }
   },
   methods: {
     openUrl(url) {
       return () => {
         window.open(url);
 
-        // analytics
+        this.$ga.event({
+          eventCategory: "Social",
+          eventAction: "click",
+          eventLabel: url
+        });
       };
     }
   }
@@ -101,12 +111,6 @@ export default {
 
     .content {
       padding: 1rem;
-
-      .header {
-        h2 {
-          margin: 0;
-        }
-      }
 
       .text {
         margin: 0;
