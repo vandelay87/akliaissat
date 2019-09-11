@@ -105,6 +105,7 @@ query Index {
                   url
                 }
               }
+              description
             }
           }
         }

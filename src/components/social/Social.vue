@@ -28,7 +28,7 @@
             />
             <p
               class="mdc-typography mdc-typography--body2 mdc-theme--secondary text"
-            >Placeholder text.</p>
+            >{{ account.description }}</p>
           </div>
           <div class="mdc-card__actions">
             <div class="mdc-card__action-buttons">
@@ -103,7 +103,7 @@ export default {
     }
 
     .content {
-      padding: 1rem;
+      padding: 1em 1em 0.5em;
 
       h2 {
         margin: 0;

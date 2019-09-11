@@ -16,7 +16,8 @@ const twitterStub = {
       url: 'https://via.placeholder.com/200x180'
     },
     description: 'An image.'
-  }
+  },
+  description: 'Twitter description'
 }
 const githubStub = {
   key: "2",
@@ -28,7 +29,8 @@ const githubStub = {
       url: 'https://via.placeholder.com/200x180'
     },
     description: 'An image.'
-  }
+  },
+  description: 'Github description'
 }
 const facebookStub = {
   key: "2",
@@ -40,7 +42,8 @@ const facebookStub = {
       url: 'https://via.placeholder.com/200x180'
     },
     description: 'An image.'
-  }
+  },
+  description: 'Facebook description'
 }
 
 storiesOf('Social', module)
