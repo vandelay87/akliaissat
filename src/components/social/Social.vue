@@ -100,6 +100,10 @@ export default {
     .icon {
       padding: 1em;
       height: 12.5em;
+
+      figure {
+        margin: auto;
+      }
     }
 
     .content {

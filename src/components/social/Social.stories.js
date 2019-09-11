@@ -33,7 +33,7 @@ const githubStub = {
   description: 'Github description'
 }
 const facebookStub = {
-  key: "2",
+  key: "3",
   name: "facebook",
   username: "username",
   profileUrl: "https://facebook.com",
@@ -47,7 +47,7 @@ const facebookStub = {
 }
 
 storiesOf('Social', module)
-  .add('default', () => ({
+  .add('one account', () => ({
     components: { Social },
     data() {
       return {

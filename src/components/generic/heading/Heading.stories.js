@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue';
 import Heading from './Heading.vue';
 
 storiesOf('Heading', module)
-  .add('default', () => ({
+  .add('sizes', () => ({
     components: { Heading },
     template: `<div class="mdc-layout-grid">
         <Heading title="Heading 1"/>

@@ -24,13 +24,10 @@ storiesOf('Button', module)
         <div class="mdc-layout-grid__cell">
           <VueButton value="dense" :click="() => {}" dense/>
         </div>
+        <div class="mdc-layout-grid__cell">
+          <VueButton value="disabled" :click="() => {}" disabled/>
         </div>
-      </div>`
-  }))
-  .add('disabled', () => ({
-    components: { VueButton },
-    template: `<div class="mdc-layout-grid">
-        <VueButton value="disabled" :click="() => {}" disabled/>
+        </div>
       </div>`
   }))
   .add('icons', () => ({
