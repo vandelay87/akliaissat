@@ -1,4 +1,4 @@
-import { mount, shallowMount } from '@vue/test-utils';
+import { mount } from '@vue/test-utils';
 import sinon from 'sinon';
 import VueButton from './VueButton.vue';
 
@@ -104,5 +104,18 @@ describe('VueButton.vue', () => {
     expect(wrapper.props().icon).toBe('warning');
     expect(wrapper.contains('i')).toBe(true);
     expect(wrapper.html()).toContain('mdc-button__icon');
+  });
+
+  it('adds theme class', () => {
+    const wrapper = mount(VueButton, {
+      propsData: {
+        value: 'click me',
+        click: () => { },
+        theme: 'mdc-theme--on-primary'
+      }
+    });
+    expect(wrapper.classes('mdc-theme--on-primary')).toBe(true);
+    expect(wrapper.props().theme).toBe('mdc-theme--on-primary');
+    expect(wrapper.html()).toContain('mdc-theme--on-primary');
   });
 });

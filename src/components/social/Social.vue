@@ -20,8 +20,15 @@
           </div>
           <div class="content">
             <Heading :title="account.name" :size="2" override="mdc-typography--headline6" />
-            <Heading :title="account.username" :size="3" override="mdc-typography--subtitle2" />
-            <p class="mdc-typography mdc-typography--body2 text">Placeholder text.</p>
+            <Heading
+              :title="account.username"
+              :size="3"
+              override="mdc-typography--subtitle2"
+              theme="mdc-theme--secondary"
+            />
+            <p
+              class="mdc-typography mdc-typography--body2 mdc-theme--secondary text"
+            >Placeholder text.</p>
           </div>
           <div class="mdc-card__actions">
             <div class="mdc-card__action-buttons">
@@ -84,7 +91,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@material/card/mdc-card";
-@import "../../assets/colours.scss";
 
 .container {
   max-width: 50em;
@@ -94,14 +100,6 @@ export default {
     .icon {
       padding: 1em;
       height: 12.5em;
-
-      &.twitter {
-        background: $twitter;
-      }
-
-      &.github {
-        background: $github;
-      }
     }
 
     .content {

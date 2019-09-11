@@ -65,4 +65,16 @@ describe('Heading.vue', () => {
     expect(wrapper.html()).toContain('mdc-typography--subtitle1');
     expect(wrapper.html()).toContain('woo!');
   });
+
+  it('adds theme class', () => {
+    const wrapper = mount(Heading, {
+      propsData: {
+        title: 'hoo!',
+        theme: 'mdc-theme--on-secondary'
+      }
+    });
+    expect(wrapper.classes('mdc-theme--on-secondary')).toBe(true);
+    expect(wrapper.props().theme).toBe('mdc-theme--on-secondary');
+    expect(wrapper.html()).toContain('mdc-theme--on-secondary');
+  });
 });

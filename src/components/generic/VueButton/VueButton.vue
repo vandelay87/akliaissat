@@ -7,7 +7,8 @@
       {'mdc-button--raised': raised},
       {'mdc-button--unelevated': unelevated},
       {'mdc-button--outlined': outlined},
-      {'mdc-button--dense': dense}
+      {'mdc-button--dense': dense},
+      theme && theme,
     ]"
     :disabled="disabled"
   >
@@ -35,7 +36,17 @@ export default {
     unelevated: Boolean,
     outlined: Boolean,
     dense: Boolean,
-    icon: String
+    icon: String,
+    theme: {
+      validator: function(value) {
+        return (
+          ["mdc-theme--on-primary", "mdc-theme--on-secondary"].indexOf(
+            value
+          ) !== -1
+        );
+      },
+      type: String
+    }
   },
   data() {
     return {
