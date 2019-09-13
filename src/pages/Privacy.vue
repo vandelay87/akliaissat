@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <div class="privacy">
-      <Heading title="Privacy dump"/>
+      <Heading title="Privacy dump" />
       <section class="block">
         <p>I'm not doing anything funky with your data. I only ever create cookies to make the website work properly, always empty of any malicious intent. You have nothing to worry about, I'm a good boy.</p>
         <Notice>
@@ -18,9 +18,13 @@
         <p>Unfortunately, that annoying cookie message will show forever until you give your consent. Sorry.</p>
       </section>
       <section class="block">
-        <Heading title="Mmm, cookies" :size="2"/>
+        <Heading title="Mmm, cookies" :size="2" />
         <p>If you're somehow interested, here are all of the cookies that are used across the website.</p>
-        <VueTable :headers="table.headers" :data="table.data"/>
+        <VueTable
+          :label="getCookieTableLabel"
+          :headers="getCookieTableHeader"
+          :rows="getCookieTableRows"
+        />
         <Disclaimer
           text="Whenever I write some code that contains functionality that can create cookies, this table will be updated."
         />
@@ -42,6 +46,21 @@
         node {
           title
           description
+          layout {
+            ... on ContentfulTable {
+              name
+              header {
+                data {
+                  data
+                }
+              }
+              rows {
+                data {
+                  data
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -52,7 +71,7 @@
 import Heading from "../components/generic/heading/Heading";
 import Notice from "../components/generic/Notice";
 import Link from "../components/generic/Link";
-import VueTable from "../components/generic/VueTable";
+import VueTable from "../components/generic/vueTable/VueTable";
 import Disclaimer from "../components/generic/Disclaimer";
 
 export default {
@@ -93,7 +112,31 @@ export default {
       return this.$page.allContentfulPage.edges[0].node.description
         ? this.$page.allContentfulPage.edges[0].node.description
         : "";
+    },
+    getCookieTableLabel() {
+      return this.$page.allContentfulPage.edges[0].node.layout[1].name ===
+        "Cookie table" &&
+        this.$page.allContentfulPage.edges[0].node.layout[1].name
+        ? this.$page.allContentfulPage.edges[0].node.layout[1].name
+        : "";
+    },
+    getCookieTableHeader() {
+      return this.$page.allContentfulPage.edges[0].node.layout[1].name ===
+        "Cookie table" &&
+        this.$page.allContentfulPage.edges[0].node.layout[1].header.data
+        ? this.$page.allContentfulPage.edges[0].node.layout[1].header.data
+        : [];
+    },
+    getCookieTableRows() {
+      return this.$page.allContentfulPage.edges[0].node.layout[1].name ===
+        "Cookie table" &&
+        this.$page.allContentfulPage.edges[0].node.layout[1].rows
+        ? this.$page.allContentfulPage.edges[0].node.layout[1].rows
+        : [];
     }
+  },
+  mounted() {
+    console.log(this.getCookieTableRows);
   },
   metaInfo() {
     return {
