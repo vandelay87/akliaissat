@@ -52,11 +52,13 @@
               header {
                 data {
                   data
+                  isNumeric
                 }
               }
               rows {
                 data {
                   data
+                  isNumeric
                 }
               }
             }
