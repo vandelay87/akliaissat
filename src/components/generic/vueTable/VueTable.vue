@@ -1,5 +1,5 @@
 <template>
-  <div class="mdc-data-table">
+  <div class="mdc-data-table table">
     <table class="mdc-data-table__table" :aria-label="label">
       <thead class="mdc-theme--primary-bg">
         <tr class="mdc-data-table__header-row">
@@ -43,4 +43,10 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@material/data-table/mdc-data-table";
+
+.table {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
 </style>
