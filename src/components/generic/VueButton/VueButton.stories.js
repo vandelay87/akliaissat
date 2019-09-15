@@ -2,16 +2,13 @@ import { storiesOf } from '@storybook/vue';
 import VueButton from './VueButton.vue';
 
 storiesOf('Button', module)
-  .add('default', () => ({
-    components: { VueButton },
-    template: `<div class="mdc-layout-grid">
-        <VueButton value="button" :click="() => {}"/>
-      </div>`
-  }))
   .add('types', () => ({
     components: { VueButton },
     template: `<div class="mdc-layout-grid">
       <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell">
+          <VueButton value="default" :click="() => {}"/>
+        </div>
         <div class="mdc-layout-grid__cell">
           <VueButton value="raised" :click="() => {}" raised/>
         </div>

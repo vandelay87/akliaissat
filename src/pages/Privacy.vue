@@ -52,7 +52,6 @@
               header {
                 data {
                   data
-                  isNumeric
                 }
               }
               rows {

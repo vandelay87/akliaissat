@@ -156,7 +156,7 @@ const rowsNumericStub = [
 ]
 
 storiesOf('Table', module)
-  .add('default', () => ({
+  .add('text', () => ({
     components: { VueTable },
     data() {
       return {

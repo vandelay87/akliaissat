@@ -6,7 +6,7 @@
           <th
             v-for="(header, index) in headers"
             :key="index"
-            :class="['mdc-data-table__header-cell mdc-theme--on-primary', header.isNumeric && 'center']"
+            class="mdc-data-table__header-cell mdc-theme--on-primary"
             role="columnheader"
             scope="col"
           >{{ header.data }}</th>
@@ -49,12 +49,6 @@ export default {
 @import "~@material/data-table/mdc-data-table";
 
 .table {
-  display: block;
-  overflow: auto;
-  width: 100%;
-
-  .center {
-    text-align: center;
-  }
+  max-width: 100%;
 }
 </style>
