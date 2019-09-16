@@ -29,6 +29,9 @@
           text="Whenever I write some code that contains functionality that can create cookies, this table will be updated."
         />
       </section>
+      <section class="block">
+        <RichText :article="getRichText" />
+      </section>
     </div>
   </Layout>
 </template>
@@ -61,6 +64,10 @@
                 }
               }
             }
+            ... on ContentfulRichText {
+              name
+              article
+            }
           }
         }
       }
@@ -74,6 +81,7 @@ import Notice from "../components/generic/Notice";
 import Link from "../components/generic/Link";
 import VueTable from "../components/generic/vueTable/VueTable";
 import Disclaimer from "../components/generic/Disclaimer";
+import RichText from "../components/generic/richText/RichText";
 
 export default {
   name: "Privacy",
@@ -82,7 +90,8 @@ export default {
     Notice,
     Link,
     VueTable,
-    Disclaimer
+    Disclaimer,
+    RichText
   },
   data() {
     return {
@@ -134,10 +143,17 @@ export default {
         this.$page.allContentfulPage.edges[0].node.layout[1].rows
         ? this.$page.allContentfulPage.edges[0].node.layout[1].rows
         : [];
+    },
+    getRichText() {
+      return this.$page.allContentfulPage.edges[0].node.layout[2].name ===
+        "Rich text test" &&
+        this.$page.allContentfulPage.edges[0].node.layout[2].article
+        ? this.$page.allContentfulPage.edges[0].node.layout[2].article
+        : {};
     }
   },
   mounted() {
-    console.log(this.getCookieTableRows);
+    console.log(this.getRichText);
   },
   metaInfo() {
     return {

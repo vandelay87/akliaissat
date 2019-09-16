@@ -12,8 +12,9 @@
     "storybook": "start-storybook"
   },
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^13.4.0",
     "@gridsome/plugin-google-analytics": "^0.1.0",
-    "@gridsome/source-contentful": "^0.2.3",
+    "@gridsome/source-contentful": "^0.5.0",
     "@material/button": "^2.1.1",
     "@material/card": "^2.3.0",
     "@material/data-table": "^3.1.1",
@@ -21,7 +22,7 @@
     "@material/ripple": "^2.1.1",
     "@material/theme": "^3.1.0",
     "@material/typography": "^1.0.0",
-    "gridsome": "^0.5.7"
+    "gridsome": "^0.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
