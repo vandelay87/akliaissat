@@ -1,22 +1,25 @@
 <template>
   <div class="layout mdc-typography">
+    <TopAppBar title="Website" />
     <transition name="fade" appear>
       <main>
-        <slot/>
+        <slot />
       </main>
     </transition>
     <!-- <CookieConsent :cookie="cookie"/> -->
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script>
+import TopAppBar from "../components/topAppBar/TopAppBar";
 import CookieConsent from "../components/CookieConsent";
 import Footer from "../components/Footer";
 
 export default {
   name: "Default",
   components: {
+    TopAppBar,
     CookieConsent,
     Footer
   },

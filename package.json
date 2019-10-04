@@ -22,6 +22,7 @@
     "@material/layout-grid": "^0.41.0",
     "@material/ripple": "^2.1.1",
     "@material/theme": "^3.1.0",
+    "@material/top-app-bar": "^3.2.0",
     "@material/typography": "^1.0.0",
     "gridsome": "^0.7.2"
   },
