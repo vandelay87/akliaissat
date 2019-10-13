@@ -14,6 +14,7 @@
         :experience="getCVExperience"
       />
       <Social :heading="getSocialHeading" :socialAccounts="getSocialAccounts" />
+      <TabBar :tabs="getCVTest" />
     </div>
   </Layout>
 </template>
@@ -108,6 +109,14 @@ query Index {
               description
             }
           }
+          ... on ContentfulTabBar {
+            name
+            tabList {
+              id
+              label
+              content
+            }
+          }
         }
       }
     }
@@ -120,6 +129,7 @@ import Banner from "../components/Banner";
 import Bio from "../components/Bio";
 import CurriculumVitae from "../components/CurriculumVitae";
 import Social from "../components/social/Social";
+import TabBar from "../components/tabBar/TabBar";
 
 export default {
   name: "Index",
@@ -127,7 +137,8 @@ export default {
     Banner,
     Bio,
     CurriculumVitae,
-    Social
+    Social,
+    TabBar
   },
   mounted: function() {
     console.log(this.$page.allContentfulPage);
@@ -215,6 +226,12 @@ export default {
         this.$page.allContentfulPage.edges[0].node.layout[3].accounts
         ? this.$page.allContentfulPage.edges[0].node.layout[3].accounts
         : [];
+    },
+    getCVTest() {
+      return this.$page.allContentfulPage.edges[0].node.layout[4].name ===
+        "CV" && this.$page.allContentfulPage.edges[0].node.layout[4].tabList
+        ? this.$page.allContentfulPage.edges[0].node.layout[4].tabList
+        : {};
     }
   },
   metaInfo() {

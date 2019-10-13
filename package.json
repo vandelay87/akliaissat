@@ -21,6 +21,7 @@
     "@material/data-table": "^3.1.1",
     "@material/layout-grid": "^0.41.0",
     "@material/ripple": "^2.1.1",
+    "@material/tab-bar": "^3.2.0",
     "@material/theme": "^3.1.0",
     "@material/top-app-bar": "^3.2.0",
     "@material/typography": "^1.0.0",
