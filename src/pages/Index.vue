@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <div class="index">
-      <Banner
+      <!-- <Banner
         :image="getBannerImage"
         :title="getBannerTitle"
         :subtitle="getBannerSubtitle"
@@ -12,9 +12,9 @@
         :technologies="getCVTechnologies"
         :education="getCVEducation"
         :experience="getCVExperience"
-      />
-      <Social :heading="getSocialHeading" :socialAccounts="getSocialAccounts" />
+      />-->
       <TabBar :tabs="getCVTest" />
+      <Social :heading="getSocialHeading" :socialAccounts="getSocialAccounts" />
     </div>
   </Layout>
 </template>
@@ -248,3 +248,11 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+@import "../assets/global.scss";
+
+.index {
+  @extend .wrapperPadding;
+}
+</style>

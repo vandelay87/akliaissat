@@ -12,8 +12,10 @@
         </div>
       </div>
     </div>
-    <div>
-      <RichText v-for="tab in filteredTabs" :key="tab.id" :article="tab.content" />
+    <div class="tab-content">
+      <transition :name="transitionDirection" mode="out-in">
+        <RichText v-for="tab in filteredTabs" :key="tab.id" :article="tab.content" />
+      </transition>
     </div>
   </div>
 </template>
@@ -38,7 +40,9 @@ export default {
   data() {
     return {
       tabBar: MDCTabBar,
-      selectedTab: ""
+      selectedTab: "",
+      selectedTabIndex: 0,
+      transitionDirection: "next"
     };
   },
   mounted() {
@@ -57,8 +61,12 @@ export default {
   methods: {
     setSelectedTab(id, i) {
       return () => {
+        i > this.selectedTabIndex
+          ? (this.transitionDirection = "next")
+          : (this.transitionDirection = "prev");
         this.tabBar.activateTab(i);
         this.selectedTab = id;
+        this.selectedTabIndex = i;
       };
     }
   }
@@ -68,4 +76,36 @@ export default {
 <style lang="scss" scoped>
 @import "~@material/tab-bar/mdc-tab-bar";
 @import "~@material/tab-scroller/mdc-tab-scroller";
+@import "../../assets/global.scss";
+
+.tab-content {
+  overflow: hidden;
+}
+
+.next-enter-active,
+.next-leave-active,
+.prev-enter-active,
+.prev-leave-active {
+  transition: 0.3s ease-in-out;
+}
+
+.next-enter,
+.prev-leave-to {
+  transform: translateX(30em);
+  opacity: 0;
+}
+
+.next-enter-to,
+.next-leave,
+.prev-enter-to,
+.prev-leave {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.next-leave-to,
+.prev-enter {
+  transform: translateX(-30em);
+  opacity: 0;
+}
 </style>
