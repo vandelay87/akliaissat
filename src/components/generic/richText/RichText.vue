@@ -21,7 +21,15 @@ export default {
           [BLOCKS.HEADING_1]: node =>
             `<h1 class="mdc-typography--headline1">${node.content[0].value}</h1>`,
           [BLOCKS.HEADING_2]: node =>
-            `<h2 class="mdc-typography--headline2">${node.content[0].value}</h2>`
+            `<h2 class="mdc-typography--headline2">${node.content[0].value}</h2>`,
+          [BLOCKS.HEADING_3]: node =>
+            `<h3 class="mdc-typography--headline3">${node.content[0].value}</h3>`,
+          [BLOCKS.HEADING_4]: node =>
+            `<h4 class="mdc-typography--headline4">${node.content[0].value}</h4>`,
+          [BLOCKS.HEADING_5]: node =>
+            `<h5 class="mdc-typography--headline5">${node.content[0].value}</h5>`,
+          [BLOCKS.HEADING_6]: node =>
+            `<h6 class="mdc-typography--headline6">${node.content[0].value}</h6>`
         }
       };
     }

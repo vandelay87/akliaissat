@@ -42,7 +42,7 @@ export default {
       tabBar: MDCTabBar,
       selectedTab: "",
       selectedTabIndex: 0,
-      transitionDirection: "next"
+      transitionDirection: ""
     };
   },
   mounted() {

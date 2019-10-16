@@ -1,6 +1,6 @@
 <template>
   <div class="layout mdc-typography">
-    <TopAppBar title="Website" />
+    <TopAppBar title="akli.dev" />
     <transition name="fade" appear>
       <main>
         <slot />
