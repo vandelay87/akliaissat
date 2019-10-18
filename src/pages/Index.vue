@@ -13,8 +13,8 @@
         :education="getCVEducation"
         :experience="getCVExperience"
       />-->
-      <TabBar :tabs="getCVTest" />
-      <Social :heading="getSocialHeading" :socialAccounts="getSocialAccounts" />
+      <TabBar :tabs="getCV" />
+      <Cards :cardList="getSocialAccounts" />
     </div>
   </Layout>
 </template>
@@ -90,16 +90,12 @@ query Index {
               }
             }
           }
-          ... on ContentfulSocial {
+          ... on ContentfulCards {
             name
-            heading {
-              title
-              align
-            }
-            accounts {
+            list {
               name
-              username
-              profileUrl
+              title
+              subtitle
               icon {
                 description
                 file {
@@ -107,6 +103,8 @@ query Index {
                 }
               }
               description
+              link
+              category
             }
           }
           ... on ContentfulTabBar {
@@ -128,7 +126,7 @@ query Index {
 import Banner from "../components/Banner";
 import Bio from "../components/Bio";
 import CurriculumVitae from "../components/CurriculumVitae";
-import Social from "../components/social/Social";
+import Cards from "../components/cards/Cards";
 import TabBar from "../components/tabBar/TabBar";
 
 export default {
@@ -137,11 +135,8 @@ export default {
     Banner,
     Bio,
     CurriculumVitae,
-    Social,
+    Cards,
     TabBar
-  },
-  mounted: function() {
-    console.log(this.$page.allContentfulPage);
   },
   computed: {
     getPageTitle() {
@@ -214,20 +209,13 @@ export default {
         ? this.$page.allContentfulPage.edges[0].node.layout[2].cv.experience
         : [];
     },
-    getSocialHeading() {
-      return this.$page.allContentfulPage.edges[0].node.layout[3].name ===
-        "Social" && this.$page.allContentfulPage.edges[0].node.layout[3].heading
-        ? this.$page.allContentfulPage.edges[0].node.layout[3].heading
-        : {};
-    },
     getSocialAccounts() {
       return this.$page.allContentfulPage.edges[0].node.layout[3].name ===
-        "Social" &&
-        this.$page.allContentfulPage.edges[0].node.layout[3].accounts
-        ? this.$page.allContentfulPage.edges[0].node.layout[3].accounts
+        "Social" && this.$page.allContentfulPage.edges[0].node.layout[3].list
+        ? this.$page.allContentfulPage.edges[0].node.layout[3].list
         : [];
     },
-    getCVTest() {
+    getCV() {
       return this.$page.allContentfulPage.edges[0].node.layout[4].name ===
         "CV" && this.$page.allContentfulPage.edges[0].node.layout[4].tabList
         ? this.$page.allContentfulPage.edges[0].node.layout[4].tabList

@@ -1,38 +1,37 @@
 <template>
   <section class="mdc-layout-grid">
-    <Heading :title="heading.title" :align="heading.align" :size="heading.size" />
     <div class="container mdc-layout-grid__inner">
       <div
-        v-for="account in socialAccounts"
-        :key="account.key"
+        v-for="card in cardList"
+        :key="card.key"
         class="mdc-layout-grid__cell"
         v-bind:class="setGridClass"
       >
-        <article class="mdc-card account">
+        <article class="mdc-card card">
           <div class="icon">
             <Picture
-              v-if="account.icon"
-              :path="account.icon.file.url"
-              :alt="account.icon.description"
+              v-if="card.icon"
+              :path="card.icon.file.url"
+              :alt="card.icon.description"
               align="centre"
               height="inherit"
             />
           </div>
           <div class="content">
-            <Heading :title="account.name" :size="2" override="mdc-typography--headline6" />
+            <Heading :title="card.title" :size="2" override="mdc-typography--headline6" />
             <Heading
-              :title="account.username"
+              :title="card.subtitle"
               :size="3"
               override="mdc-typography--subtitle2"
               theme="mdc-theme--secondary"
             />
             <p
               class="mdc-typography mdc-typography--body2 mdc-theme--secondary text"
-            >{{ account.description }}</p>
+            >{{ card.description }}</p>
           </div>
           <div class="mdc-card__actions">
             <div class="mdc-card__action-buttons">
-              <VueButton value="view" :click="openUrl(account.profileUrl)" />
+              <VueButton value="view" :click="openUrl(card.link, card.category)" />
             </div>
           </div>
         </article>
@@ -47,18 +46,14 @@ import VueButton from "../generic/vueButton/VueButton";
 import Picture from "../generic/Picture";
 
 export default {
-  name: "Social",
+  name: "Cards",
   components: {
     Heading,
     VueButton,
     Picture
   },
   props: {
-    heading: {
-      type: Object,
-      required: true
-    },
-    socialAccounts: {
+    cardList: {
       type: Array,
       required: true
     }
@@ -67,19 +62,19 @@ export default {
     setGridClass: function() {
       return {
         "mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-12-desktop":
-          this.socialAccounts.length === 1,
+          this.cardList.length === 1,
         "mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-6-desktop":
-          this.socialAccounts.length === 2
+          this.cardList.length === 2
       };
     }
   },
   methods: {
-    openUrl(url) {
+    openUrl(url, category) {
       return () => {
         window.open(url);
 
         this.$ga.event({
-          eventCategory: "Social",
+          eventCategory: category,
           eventAction: "click",
           eventLabel: url
         });
@@ -96,7 +91,7 @@ export default {
   max-width: 50em;
   margin: auto;
 
-  .account {
+  .card {
     .icon {
       padding: 1em;
       height: 12.5em;
