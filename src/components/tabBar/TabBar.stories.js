@@ -6,24 +6,24 @@ const tabStubSkills = {
   label: 'skills',
   content: {
     data: {},
-    'content': [{
+    content: [{
       data: {},
       content: [{
         data: {},
         marks: [],
-        'value': 'Dignissimos ducimus qui',
+        value: 'Dignissimos ducimus qui',
         nodeType: 'text',
       }],
-      'nodeType': 'heading-2',
+      nodeType: 'heading-2',
     }, {
       data: {},
-      'content': [{
-        'data': {},
+      content: [{
+        data: {},
         marks: [],
         value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
-        'nodeType': 'text',
+        nodeType: 'text',
       }],
-      'nodeType': 'paragraph',
+      nodeType: 'paragraph',
     }],
     nodeType: 'document',
   },
@@ -33,22 +33,22 @@ const tabStubExperience = {
   label: 'experience',
   content: {
     data: {},
-    'content': [{
+    content: [{
       data: {},
-      'content': [{
-        'data': {},
-        'marks': [],
+      content: [{
+        data: {},
+        marks: [],
         value: 'Dignissimos ducimus qui',
         nodeType: 'text',
       }],
       nodeType: 'heading-2',
     }, {
       data: {},
-      'content': [{
+      content: [{
         data: {},
-        'marks': [],
-        'value': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
-        'nodeType': 'text',
+        marks: [],
+        value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+        nodeType: 'text',
       }],
       nodeType: 'paragraph',
     }],
@@ -59,8 +59,8 @@ const tabStubEducation = {
   key: '3',
   label: 'education',
   content: {
-    'data': {},
-    'content': [{
+    data: {},
+    content: [{
       data: {},
       content: [{
         data: {},
@@ -70,14 +70,14 @@ const tabStubEducation = {
       }],
       nodeType: 'heading-2',
     }, {
-      'data': {},
-      'content': [{
-        'data': {},
-        'marks': [],
-        'value': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+      data: {},
+      content: [{
+        data: {},
+        marks: [],
+        value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
         nodeType: 'text',
       }],
-      'nodeType': 'paragraph',
+      nodeType: 'paragraph',
     }],
     nodeType: 'document',
   },

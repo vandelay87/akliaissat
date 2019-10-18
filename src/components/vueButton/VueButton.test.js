@@ -7,8 +7,8 @@ describe('VueButton.vue', () => {
     const wrapper = mount(VueButton, {
       propsData: {
         value: 'click me',
-        click: () => { }
-      }
+        click: () => { },
+      },
     });
 
     expect(wrapper.contains('button')).toBe(true);
@@ -21,8 +21,8 @@ describe('VueButton.vue', () => {
     const wrapper = mount(VueButton, {
       propsData: {
         value: 'click me',
-        click: jest.fn()
-      }
+        click: jest.fn(),
+      },
     });
 
     wrapper.find('button').trigger('click');
@@ -38,8 +38,8 @@ describe('VueButton.vue', () => {
         raised: true,
         unelevated: true,
         outlined: true,
-        dense: true
-      }
+        dense: true,
+      },
     });
 
     expect(wrapper.props().raised).toBe(true);
@@ -57,8 +57,8 @@ describe('VueButton.vue', () => {
       propsData: {
         value: 'click me',
         click: jest.fn(),
-        disabled: true
-      }
+        disabled: true,
+      },
     });
 
     wrapper.find('button').trigger('click');
@@ -70,8 +70,8 @@ describe('VueButton.vue', () => {
     const wrapper = mount(VueButton, {
       propsData: {
         value: 'click me',
-        click: () => { }
-      }
+        click: () => { },
+      },
     });
 
     expect(typeof wrapper.vm.ripple).toBe('object');
@@ -83,11 +83,11 @@ describe('VueButton.vue', () => {
     mount(VueButton, {
       propsData: {
         value: 'click me',
-        click: () => { }
+        click: () => { },
       },
       destroyed() {
         spy();
-      }
+      },
     }).destroy();
     expect(spy.calledOnce).toBe(true);
   });
@@ -97,8 +97,8 @@ describe('VueButton.vue', () => {
       propsData: {
         value: 'click me',
         click: () => { },
-        icon: 'warning'
-      }
+        icon: 'warning',
+      },
     });
 
     expect(wrapper.props().icon).toBe('warning');
@@ -111,8 +111,8 @@ describe('VueButton.vue', () => {
       propsData: {
         value: 'click me',
         click: () => { },
-        theme: 'mdc-theme--on-primary'
-      }
+        theme: 'mdc-theme--on-primary',
+      },
     });
     expect(wrapper.classes('mdc-theme--on-primary')).toBe(true);
     expect(wrapper.props().theme).toBe('mdc-theme--on-primary');

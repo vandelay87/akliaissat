@@ -41,8 +41,8 @@
 </template>
 
 <script>
-import Heading from "../generic/heading/Heading";
-import VueButton from "../generic/vueButton/VueButton";
+import Heading from "../heading/Heading";
+import VueButton from "../vueButton/VueButton";
 import Picture from "../picture/Picture";
 
 export default {

@@ -25,7 +25,7 @@ storiesOf('Button', module)
           <VueButton value="disabled" :click="() => {}" disabled/>
         </div>
         </div>
-      </div>`
+      </div>`,
   }))
   .add('icons', () => ({
     components: { VueButton },
@@ -41,5 +41,5 @@ storiesOf('Button', module)
           <VueButton value="star" :click="() => {}" icon="star"/>
         </div>
       </div>
-    </div>`
+    </div>`,
   }));

@@ -123,18 +123,12 @@ query Index {
 </page-query>
 
 <script>
-import Banner from "../components/Banner";
-import Bio from "../components/Bio";
-import CurriculumVitae from "../components/CurriculumVitae";
 import Cards from "../components/cards/Cards";
 import TabBar from "../components/tabBar/TabBar";
 
 export default {
   name: "Index",
   components: {
-    Banner,
-    Bio,
-    CurriculumVitae,
     Cards,
     TabBar
   },

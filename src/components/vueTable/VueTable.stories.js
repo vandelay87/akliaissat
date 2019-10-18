@@ -18,7 +18,7 @@ const headerStub = [
     data: 'Animal',
     isNumeric: null,
   },
-]
+];
 const rowsStub = [
   {
     data: [
@@ -27,18 +27,18 @@ const rowsStub = [
         isNumeric: null,
       },
       {
-        data: "Square",
+        data: 'Square',
         isNumeric: null,
       },
       {
-        data: "Football",
+        data: 'Football',
         isNumeric: null,
       },
       {
-        data: "Giraffe",
+        data: 'Giraffe',
         isNumeric: null,
       },
-    ]
+    ],
   },
   {
     data: [
@@ -46,18 +46,18 @@ const rowsStub = [
         data: 'Green',
       },
       {
-        data: "Triangle",
+        data: 'Triangle',
       },
       {
-        data: "Rugby",
+        data: 'Rugby',
       },
       {
-        data: "Grizzly bear",
+        data: 'Grizzly bear',
 
       },
-    ]
+    ],
   },
-]
+];
 const headerNumericStub = [
   {
     data: 'Dessert',
@@ -79,7 +79,7 @@ const headerNumericStub = [
     data: 'Protein (g)',
     isNumeric: true,
   },
-]
+];
 const rowsNumericStub = [
   {
     data: [
@@ -88,22 +88,22 @@ const rowsNumericStub = [
         isNumeric: null,
       },
       {
-        data: "159",
+        data: '159',
         isNumeric: true,
       },
       {
-        data: "6",
+        data: '6',
         isNumeric: true,
       },
       {
-        data: "24",
+        data: '24',
         isNumeric: true,
       },
       {
-        data: "4",
+        data: '4',
         isNumeric: true,
       },
-    ]
+    ],
   },
   {
     data: [
@@ -112,22 +112,22 @@ const rowsNumericStub = [
         isNumeric: null,
       },
       {
-        data: "237",
+        data: '237',
         isNumeric: true,
       },
       {
-        data: "9",
+        data: '9',
         isNumeric: true,
       },
       {
-        data: "37",
+        data: '37',
         isNumeric: true,
       },
       {
-        data: "4.3",
+        data: '4.3',
         isNumeric: true,
       },
-    ]
+    ],
   },
   {
     data: [
@@ -136,24 +136,24 @@ const rowsNumericStub = [
         isNumeric: null,
       },
       {
-        data: "262",
+        data: '262',
         isNumeric: true,
       },
       {
-        data: "16",
+        data: '16',
         isNumeric: true,
       },
       {
-        data: "24",
+        data: '24',
         isNumeric: true,
       },
       {
-        data: "6",
+        data: '6',
         isNumeric: true,
       },
-    ]
+    ],
   },
-]
+];
 
 storiesOf('Table', module)
   .add('text', () => ({
@@ -161,22 +161,22 @@ storiesOf('Table', module)
     data() {
       return {
         headers: headerStub,
-        rows: rowsStub
-      }
+        rows: rowsStub,
+      };
     },
     template: `<div class="mdc-layout-grid">
         <VueTable label="Table label" :headers="headers" :rows="rows" />
-      </div>`
+      </div>`,
   }))
   .add('numeric', () => ({
     components: { VueTable },
     data() {
       return {
         headers: headerNumericStub,
-        rows: rowsNumericStub
-      }
+        rows: rowsNumericStub,
+      };
     },
     template: `<div class="mdc-layout-grid">
         <VueTable label="Table label" :headers="headers" :rows="rows" />
-      </div>`
+      </div>`,
   }));

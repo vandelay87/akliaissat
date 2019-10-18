@@ -6,46 +6,19 @@
         <slot />
       </main>
     </transition>
-    <!-- <CookieConsent :cookie="cookie"/> -->
     <Footer />
   </div>
 </template>
 
 <script>
 import TopAppBar from "../components/topAppBar/TopAppBar";
-import CookieConsent from "../components/CookieConsent";
 import Footer from "../components/footer/Footer";
 
 export default {
   name: "Default",
   components: {
     TopAppBar,
-    CookieConsent,
     Footer
-  },
-  data() {
-    return {
-      cookie: {
-        consent: true,
-        name: "cookie_consent"
-      }
-    };
-  },
-  mounted: function() {
-    this.checkCookieConsent();
-  },
-  methods: {
-    checkCookieConsent: function() {
-      const cookies = document.cookie.split(";");
-      let cookieExists = false;
-
-      for (var i = 0; i < cookies.length; i++) {
-        if (cookies[i].trim().split("=")[0] === this.cookie.name)
-          cookieExists = true;
-      }
-
-      if (!cookieExists) this.cookie.consent = false;
-    }
   }
 };
 </script>

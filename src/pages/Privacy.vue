@@ -3,21 +3,6 @@
     <div class="privacy">
       <Heading title="Privacy dump" />
       <section class="block">
-        <p>I'm not doing anything funky with your data. I only ever create cookies to make the website work properly, always empty of any malicious intent. You have nothing to worry about, I'm a good boy.</p>
-        <Notice>
-          <p>
-            I made this website. You can check out every line of code
-            <Link
-              path="https://github.com/vandelay87/akliaissat"
-              text="here"
-              customClass="alt"
-              :outbound="true"
-            />.
-          </p>
-        </Notice>
-        <p>Unfortunately, that annoying cookie message will show forever until you give your consent. Sorry.</p>
-      </section>
-      <section class="block">
         <Heading title="Mmm, cookies" :size="2" />
         <p>If you're somehow interested, here are all of the cookies that are used across the website.</p>
         <VueTable
@@ -28,9 +13,6 @@
         <Disclaimer
           text="Whenever I write some code that contains functionality that can create cookies, this table will be updated."
         />
-      </section>
-      <section class="block">
-        <RichText :article="getRichText" />
       </section>
     </div>
   </Layout>
@@ -76,21 +58,17 @@
 </page-query>
 
 <script>
-import Heading from "../components/generic/heading/Heading";
-import Notice from "../components/generic/Notice";
+import Heading from "../components/heading/Heading";
 import Link from "../components/link/Link";
-import VueTable from "../components/generic/vueTable/VueTable";
-import Disclaimer from "../components/generic/Disclaimer";
-import RichText from "../components/generic/richText/RichText";
+import VueTable from "../components/vueTable/VueTable";
+import RichText from "../components/richText/RichText";
 
 export default {
   name: "Privacy",
   components: {
     Heading,
-    Notice,
     Link,
     VueTable,
-    Disclaimer,
     RichText
   },
   data() {
@@ -151,9 +129,6 @@ export default {
         ? this.$page.allContentfulPage.edges[0].node.layout[2].article
         : {};
     }
-  },
-  mounted() {
-    console.log(this.getRichText);
   },
   metaInfo() {
     return {

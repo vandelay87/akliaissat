@@ -10,7 +10,7 @@ const headerStub = [
     data: 'Shape',
     isNumeric: null,
   },
-]
+];
 const rowsStub = [
   {
     data: [
@@ -19,10 +19,10 @@ const rowsStub = [
         isNumeric: null,
       },
       {
-        data: "Square",
+        data: 'Square',
         isNumeric: null,
       },
-    ]
+    ],
   },
   {
     data: [
@@ -31,12 +31,12 @@ const rowsStub = [
         isNumeric: null,
       },
       {
-        data: "Triangle",
+        data: 'Triangle',
         isNumeric: null,
       },
-    ]
+    ],
   },
-]
+];
 const rowsNumericStub = [
   {
     data: [
@@ -45,10 +45,10 @@ const rowsNumericStub = [
         isNumeric: true,
       },
       {
-        data: "2",
+        data: '2',
         isNumeric: true,
       },
-    ]
+    ],
   },
   {
     data: [
@@ -57,12 +57,12 @@ const rowsNumericStub = [
         isNumeric: true,
       },
       {
-        data: "99.9",
+        data: '99.9',
         isNumeric: true,
       },
-    ]
+    ],
   },
-]
+];
 
 describe('VueTable.vue', () => {
   it('renders table', () => {

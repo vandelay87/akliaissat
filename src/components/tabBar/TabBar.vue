@@ -23,7 +23,7 @@
 <script>
 import { MDCTabBar } from "@material/tab-bar";
 import Tab from "./tab/Tab";
-import RichText from "../generic/richText/RichText";
+import RichText from "../richText/RichText";
 
 export default {
   name: "TabBar",

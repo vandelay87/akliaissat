@@ -5,8 +5,8 @@ describe('Heading.vue', () => {
   it('renders heading', () => {
     const wrapper = mount(Heading, {
       propsData: {
-        title: 'I am the egg man'
-      }
+        title: 'I am the egg man',
+      },
     });
 
     expect(wrapper.contains('h1')).toBe(true);
@@ -18,8 +18,8 @@ describe('Heading.vue', () => {
     const wrapper = mount(Heading, {
       propsData: {
         title: 'They are the egg men',
-        size: 4
-      }
+        size: 4,
+      },
     });
 
     expect(wrapper.props().size).toBe(4);
@@ -31,8 +31,8 @@ describe('Heading.vue', () => {
     const wrapper = mount(Heading, {
       propsData: {
         title: 'I am the walrus.',
-        align: 'right'
-      }
+        align: 'right',
+      },
     });
 
     expect(wrapper.props().align).toBe('right');
@@ -43,8 +43,8 @@ describe('Heading.vue', () => {
     const wrapper = mount(Heading, {
       propsData: {
         title: 'goo goob goo joob',
-        override: 'mdc-typography--headline3'
-      }
+        override: 'mdc-typography--headline3',
+      },
     });
 
     expect(wrapper.contains('h1')).toBe(true);
@@ -56,8 +56,8 @@ describe('Heading.vue', () => {
     const wrapper = mount(Heading, {
       propsData: {
         title: 'woo!',
-        subtitle: true
-      }
+        subtitle: true,
+      },
     });
 
     expect(wrapper.contains('h6')).toBe(true);
@@ -70,8 +70,8 @@ describe('Heading.vue', () => {
     const wrapper = mount(Heading, {
       propsData: {
         title: 'hoo!',
-        theme: 'mdc-theme--on-secondary'
-      }
+        theme: 'mdc-theme--on-secondary',
+      },
     });
     expect(wrapper.classes('mdc-theme--on-secondary')).toBe(true);
     expect(wrapper.props().theme).toBe('mdc-theme--on-secondary');
