@@ -3,15 +3,15 @@
     <article v-if="isVisible" class="cookieBanner">
       <section class="content">
         <div class="block header">
-          <Heading :title="title" :size="3"/>
+          <Heading :title="title" :size="3" />
           <p>
             Is that cool? I use them to help the website run better. You can find more information on the
-            <Link path="/privacy" text="privacy page" customClass="alt"/>.
+            <Link path="/privacy" text="privacy page" customClass="alt" />.
           </p>
         </div>
         <div class="block buttons">
-          <VueButton value="Cool" :onClick="createCookie.bind(null, cookie.name, false)"/>
-          <VueButton value="Not Cool" :onClick="createCookie.bind(null, cookie.name, true)"/>
+          <VueButton value="Cool" :onClick="createCookie.bind(null, cookie.name, false)" />
+          <VueButton value="Not Cool" :onClick="createCookie.bind(null, cookie.name, true)" />
         </div>
       </section>
     </article>
@@ -21,7 +21,7 @@
 <script>
 import Heading from "./generic/heading/Heading";
 import VueButton from "./generic/vueButton/VueButton";
-import Link from "./generic/Link";
+import Link from "./link/Link";
 
 export default {
   name: "CookieConsent",

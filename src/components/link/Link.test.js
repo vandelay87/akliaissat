@@ -1,5 +1,5 @@
-import { RouterLinkStub, shallowMount } from '@vue/test-utils';
-import Link from '../components/generic/Link.vue';
+import { shallowMount, RouterLinkStub } from '@vue/test-utils';
+import Link from './Link.vue';
 
 describe('Link.vue', () => {
   it('renders link', () => {
@@ -14,6 +14,7 @@ describe('Link.vue', () => {
       },
     });
 
+    expect(wrapper.isVueInstance()).toBeTruthy();
     expect(wrapper.contains('a')).toBe(true);
     expect(wrapper.props().path).toBe('https://www.google.com');
     expect(wrapper.props().text).toBe('boggle.bob');
@@ -48,7 +49,7 @@ describe('Link.vue', () => {
       propsData: {
         path: 'https://www.github.com',
         text: 'gothub.lom',
-        customClass: 'github',
+        customClass: 'alt',
         outbound: true,
       },
       stubs: {
@@ -56,7 +57,6 @@ describe('Link.vue', () => {
       },
     });
 
-    expect(wrapper.props().customClass).toBe('github');
-    expect(wrapper.classes('github')).toBe(true);
+    expect(wrapper.classes('alt')).toBe(true);
   });
 });

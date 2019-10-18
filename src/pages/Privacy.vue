@@ -78,7 +78,7 @@
 <script>
 import Heading from "../components/generic/heading/Heading";
 import Notice from "../components/generic/Notice";
-import Link from "../components/generic/Link";
+import Link from "../components/link/Link";
 import VueTable from "../components/generic/vueTable/VueTable";
 import Disclaimer from "../components/generic/Disclaimer";
 import RichText from "../components/generic/richText/RichText";

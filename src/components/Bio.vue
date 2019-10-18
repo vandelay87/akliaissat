@@ -26,7 +26,7 @@
 <script>
 import Heading from "./generic/heading/Heading";
 import Picture from "./generic/Picture";
-import Link from "./generic/Link";
+import Link from "./link/Link";
 import Notice from "./generic/Notice";
 
 export default {

@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Link from "../generic/Link";
+import Link from "../link/Link";
 
 export default {
   name: "Footer",
