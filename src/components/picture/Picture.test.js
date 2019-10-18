@@ -1,9 +1,5 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils';
-import Picture from '../components/generic/Picture.vue';
-// import Gridsome from 'gridsome';
-
-// const localVue = createLocalVue();
-// localVue.use(Gridsome);
+import { shallowMount } from '@vue/test-utils';
+import Picture from './Picture.vue';
 
 describe('Picture.vue', () => {
   it('renders image', () => {
@@ -11,9 +7,8 @@ describe('Picture.vue', () => {
       propsData: {
         path: 'akliaissat/src/assets/images/me.jpg',
         alt: 'An hoop.',
-        
+
       },
-      // localVue,
     });
 
     expect(wrapper.contains('img')).toBe(true);
@@ -29,7 +24,6 @@ describe('Picture.vue', () => {
         alt: 'An hoop.',
         caption: 'Hop, pops and cops.',
       },
-      // localVue,
     });
 
     expect(wrapper.contains('figure')).toBe(true);
@@ -45,7 +39,6 @@ describe('Picture.vue', () => {
         alt: 'An hoop.',
         align: 'left',
       },
-      // localVue,
     });
 
     expect(wrapper.props().align).toBe('left');
@@ -59,7 +52,7 @@ describe('Picture.vue', () => {
       },
     });
 
-    expect(wrapper.vm.style).toMatchObject({"maxWidth": "none"});
+    expect(wrapper.attributes().style).toBe('max-width: none;');
   });
 
   it('returns 420px max-width', () => {
@@ -67,11 +60,22 @@ describe('Picture.vue', () => {
       propsData: {
         path: 'akliaissat/src/assets/images/me.jpg',
         alt: 'An hoop.',
-        maxWidth: '420px',
+        width: '420px',
       },
-      // localVue,
     });
 
-    expect(wrapper.vm.style).toMatchObject({"maxWidth": "420px"});
+    expect(wrapper.attributes().style).toBe('max-width: 420px;');
+  });
+
+  it('returns 120px height', () => {
+    const wrapper = shallowMount(Picture, {
+      propsData: {
+        path: 'akliaissat/src/assets/images/me.jpg',
+        alt: 'An hoop.',
+        height: '120px',
+      },
+    });
+
+    expect(wrapper.attributes().style).toBe('max-width: none; height: 120px;');
   });
 });

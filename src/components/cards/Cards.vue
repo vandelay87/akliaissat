@@ -43,7 +43,7 @@
 <script>
 import Heading from "../generic/heading/Heading";
 import VueButton from "../generic/vueButton/VueButton";
-import Picture from "../generic/Picture";
+import Picture from "../picture/Picture";
 
 export default {
   name: "Cards",

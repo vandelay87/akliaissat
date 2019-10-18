@@ -13,7 +13,7 @@ storiesOf('Heading', module)
         <Heading title="Heading 6" :size="6"/>
         <Heading title="Subtitle 1" :subtitle="true"/>
         <Heading title="Subtitle 2" :subtitle="true" override="mdc-typography--subtitle2"/>
-      </div>`
+      </div>`,
   }))
   .add('alignment', () => ({
     components: { Heading },
@@ -21,5 +21,5 @@ storiesOf('Heading', module)
         <Heading title="Left" align="left" :size="4"/>
         <Heading title="Right" align="right" :size="4"/>
         <Heading title="Centre" align="centre" :size="4"/>
-      </div>`
+      </div>`,
   }));

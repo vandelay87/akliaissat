@@ -1,5 +1,5 @@
 <template>
-  <figure :class="[align, {banner: isBanner}]" class="figure" :style="getDimensions">
+  <figure :class="align" class="figure" :style="getDimensions">
     <img :src="path" class="image" :alt="alt" />
     <figcaption v-if="caption" class="caption">{{ caption }}</figcaption>
   </figure>
@@ -20,13 +20,12 @@ export default {
     caption: String,
     align: {
       validator: function(value) {
-        return ["left", "right", "centre"].indexOf(value) !== -1;
+        return ["left", "right", "center"].indexOf(value) !== -1;
       },
       type: String
     },
     width: String,
-    height: String,
-    isBanner: Boolean
+    height: String
   },
   computed: {
     getDimensions: function() {
@@ -59,7 +58,7 @@ export default {
       padding: 0 0 1em 1em;
     }
 
-    &.centre {
+    &.center {
       .image {
         margin: auto;
         display: block;

@@ -25,7 +25,7 @@
 
 <script>
 import Heading from "./generic/heading/Heading";
-import Picture from "./generic/Picture";
+import Picture from "./picture/Picture";
 import Link from "./link/Link";
 import Notice from "./generic/Notice";
 

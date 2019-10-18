@@ -14,7 +14,7 @@
 
 <script>
 import Heading from "./generic/heading/Heading";
-import Picture from "./generic/Picture";
+import Picture from "./picture/Picture";
 
 export default {
   name: "Banner",
