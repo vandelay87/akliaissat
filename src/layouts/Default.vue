@@ -14,7 +14,7 @@
 <script>
 import TopAppBar from "../components/topAppBar/TopAppBar";
 import CookieConsent from "../components/CookieConsent";
-import Footer from "../components/Footer";
+import Footer from "../components/footer/Footer";
 
 export default {
   name: "Default",
