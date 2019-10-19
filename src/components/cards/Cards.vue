@@ -13,7 +13,7 @@
               v-if="card.icon"
               :path="card.icon.file.url"
               :alt="card.icon.description"
-              align="centre"
+              align="center"
               height="inherit"
             />
           </div>
