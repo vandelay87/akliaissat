@@ -1,12 +1,22 @@
 <template>
   <Layout>
     <div class="index">
-      <Heading :title="getPageHeading" />
-      <RichText :article="getIntroductionText" />
-      <Heading :title="getCVHeading.title" :size="getCVHeading.size" />
-      <TabBar :tabs="getCV" />
-      <Heading :title="getSocialHeading.title" :size="getSocialHeading.size" />
-      <Cards :cardList="getSocialAccounts" />
+      <section class="section">
+        <Heading :title="getPageHeading" />
+        <RichText :article="getIntroductionText" />
+      </section>
+      <section class="section">
+        <Heading :title="getCVHeading.title" :size="getCVHeading.size" :align="getCVHeading.align" />
+        <TabBar :tabs="getCV" />
+      </section>
+      <section class="section">
+        <Heading
+          :title="getSocialHeading.title"
+          :size="getSocialHeading.size"
+          :align="getSocialHeading.align"
+        />
+        <Cards :cardList="getSocialAccounts" />
+      </section>
     </div>
   </Layout>
 </template>
@@ -22,6 +32,7 @@ query Index {
           ... on ContentfulHeading {
             title
             size
+            align
           }
           ... on ContentfulRichText {
             name
@@ -101,7 +112,8 @@ export default {
         this.$page.allContentfulPage.edges[0].node.layout[2].size
         ? {
             title: this.$page.allContentfulPage.edges[0].node.layout[2].title,
-            size: this.$page.allContentfulPage.edges[0].node.layout[2].size
+            size: this.$page.allContentfulPage.edges[0].node.layout[2].size,
+            align: this.$page.allContentfulPage.edges[0].node.layout[2].align
           }
         : {};
     },
@@ -116,7 +128,8 @@ export default {
         this.$page.allContentfulPage.edges[0].node.layout[4].size
         ? {
             title: this.$page.allContentfulPage.edges[0].node.layout[4].title,
-            size: this.$page.allContentfulPage.edges[0].node.layout[4].size
+            size: this.$page.allContentfulPage.edges[0].node.layout[4].size,
+            align: this.$page.allContentfulPage.edges[0].node.layout[4].align
           }
         : {};
     },
@@ -147,5 +160,9 @@ export default {
 
 .index {
   @extend .wrapperPadding;
+
+  .section {
+    @extend .sectionSpacing;
+  }
 }
 </style>

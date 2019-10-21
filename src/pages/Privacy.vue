@@ -1,15 +1,19 @@
 <template>
   <Layout>
     <div class="privacy">
-      <Heading :title="getPrivacyHeading" />
-      <RichText :article="getPrivacyText" />
-      <Heading :title="getCookieHeading.title" :size="getCookieHeading.size" />
-      <RichText :article="getCookieText" />
-      <VueTable
-        :label="getCookieTable.label"
-        :headers="getCookieTable.headers"
-        :rows="getCookieTable.rows"
-      />
+      <section class="section">
+        <Heading :title="getPrivacyHeading" />
+        <RichText :article="getPrivacyText" />
+      </section>
+      <section class="section">
+        <Heading :title="getCookieHeading.title" :size="getCookieHeading.size" />
+        <RichText :article="getCookieText" />
+        <VueTable
+          :label="getCookieTable.label"
+          :headers="getCookieTable.headers"
+          :rows="getCookieTable.rows"
+        />
+      </section>
     </div>
   </Layout>
 </template>
@@ -135,5 +139,9 @@ export default {
 .privacy {
   @extend .wrapperPadding;
   margin: 1em auto;
+
+  .section {
+    @extend .sectionSpacing;
+  }
 }
 </style>
