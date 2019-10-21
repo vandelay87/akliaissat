@@ -1,15 +1,25 @@
+$mdc-theme-primary: #1976d2;
+$mdc-theme-secondary: #616161;
+$mdc-theme-p-light: #63a4ff;
+$mdc-theme-s-light: #8e8e8e;
+$mdc-theme-p-dark: #004ba0;
+$mdc-theme-s-dark: #373737;
+
+$mdc-theme-background: #ffffff;
+$mdc-theme-surface: #ffffff;
+$mdc-theme-error: #b71c1c;
+$mdc-theme-warning: #f4511e;
+
+$mdc-theme-on-primary: #ffffff;
+$mdc-theme-on-secondary: #ffffff;
+$mdc-theme-on-background: #000000;
+$mdc-theme-on-surface: #000000;
+$mdc-theme-on-error: #000000;
+
 $white: #ffffff;
 $black: #000000;
-$lightGray: #F0F0F0;
-$gray: #E8E8E8;
-$darkGray: #282828;
-$blue: #2d74e5;
-$link: #E59E2D;
-$linkAlt: #2DE59E;
-$linkHover: #E5CC2D;
-$linkAltHover: #2DE5CC;
-$border: #DCDCDC;
-$twitter: #38A1F3;
-$github: #333333;
-$warning: #E59E2D;
-$error: #AC2222;
+
+$link: #e59e2d;
+$linkAlt: #2de59e;
+$linkHover: #e5cc2d;
+$linkAltHover: #2de5cc;

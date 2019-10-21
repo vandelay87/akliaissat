@@ -1,6 +1,6 @@
 {
   "name": "akli",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A personal website made by Akli Aissat about web development and programming.",
   "author": "Akli Aissat",
   "license": "ISC",
@@ -8,26 +8,52 @@
     "build": "gridsome build",
     "develop": "gridsome develop",
     "explore": "gridsome explore",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "start-storybook"
   },
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^13.4.0",
+    "@contentful/rich-text-types": "^13.4.0",
     "@gridsome/plugin-google-analytics": "^0.1.0",
-    "@gridsome/source-contentful": "^0.2.2",
-    "gridsome": "^0.5.7"
+    "@gridsome/source-contentful": "^0.5.0",
+    "@material/button": "^2.1.1",
+    "@material/card": "^2.3.0",
+    "@material/data-table": "^3.1.1",
+    "@material/layout-grid": "^0.41.0",
+    "@material/ripple": "^2.1.1",
+    "@material/tab-bar": "^3.2.0",
+    "@material/theme": "^3.1.0",
+    "@material/top-app-bar": "^3.2.0",
+    "@material/typography": "^1.0.0",
+    "gridsome": "^0.7.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.3",
+    "@babel/core": "^7.4.5",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-env": "^7.4.5",
+    "@storybook/theming": "^5.1.11",
+    "@storybook/vue": "^5.0.11",
     "@vue/test-utils": "^1.0.0-beta.29",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^24.7.1",
-    "jest": "^24.7.1",
-    "node-sass": "^4.11.0",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
+    "babel-preset-vue": "^2.0.2",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-vue": "^5.2.3",
+    "glob": "^7.1.4",
+    "jest": "^24.8.0",
+    "node-sass": "^4.12.0",
     "npm-force-resolutions": "0.0.2",
+    "path": "^0.12.7",
     "sass-loader": "^7.1.0",
+    "sinon": "^7.3.2",
+    "style-loader": "^0.23.1",
     "vue-jest": "^3.0.4",
-    "vue-svg-loader": "^0.12.0"
+    "vue-loader": "^15.7.0",
+    "vue-svg-loader": "^0.12.0",
+    "vue-template-compiler": "^2.6.10"
   },
   "resolutions": {
     "gridsome/vue-router": "3.0.2"
@@ -52,6 +78,7 @@
       "!**/gridsome.config.js",
       "!**/gridsome.server.js",
       "!**/src/main.js",
+      "!**/*.stories.js",
       "!**/src/tests/coverage/lcov-report/*.js",
       "!**/src/tests/mocks/fileMock.js",
       "!**/dist/**"
