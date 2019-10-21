@@ -1,61 +1,37 @@
 <template>
-  <div class="layout">
+  <div class="layout mdc-typography">
+    <TopAppBar title="akli.dev" />
     <transition name="fade" appear>
       <main>
-        <slot/>
+        <slot />
       </main>
     </transition>
-    <CookieConsent :cookie="cookie"/>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script>
-import CookieConsent from "../components/CookieConsent";
-import Footer from "../components/Footer";
+import TopAppBar from "../components/topAppBar/TopAppBar";
+import Footer from "../components/footer/Footer";
 
 export default {
   name: "Default",
   components: {
-    CookieConsent,
+    TopAppBar,
     Footer
-  },
-  data() {
-    return {
-      cookie: {
-        consent: true,
-        name: "cookie_consent"
-      }
-    };
-  },
-  mounted: function() {
-    this.checkCookieConsent();
-  },
-  methods: {
-    checkCookieConsent: function() {
-      const cookies = document.cookie.split(";");
-      let cookieExists = false;
-
-      for (var i = 0; i < cookies.length; i++) {
-        if (cookies[i].trim().split("=")[0] === this.cookie.name)
-          cookieExists = true;
-      }
-
-      if (!cookieExists) this.cookie.consent = false;
-    }
   }
 };
 </script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import "../assets/theme.scss";
+@import "@material/typography/mdc-typography";
+@import "@material/layout-grid/mdc-layout-grid";
 
 body {
   margin: 0;
 
   .layout {
-    font-family: "Open Sans", sans-serif;
-
     .fade-enter-active {
       transition: opacity 0.4s;
     }

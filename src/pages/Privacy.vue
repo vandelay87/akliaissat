@@ -1,28 +1,17 @@
 <template>
   <Layout>
     <div class="privacy">
-      <Heading title="Privacy dump"/>
-      <section class="block">
-        <p>I'm not doing anything funky with your data. I only ever create cookies to make the website work properly, always empty of any malicious intent. You have nothing to worry about, I'm a good boy.</p>
-        <Notice>
-          <p>
-            I made this website. You can check out every line of code
-            <Link
-              path="https://github.com/vandelay87/akliaissat"
-              text="here"
-              customClass="alt"
-              :outbound="true"
-            />.
-          </p>
-        </Notice>
-        <p>Unfortunately, that annoying cookie message will show forever until you give your consent. Sorry.</p>
+      <section class="section">
+        <Heading :title="getPrivacyHeading" />
+        <RichText :article="getPrivacyText" />
       </section>
-      <section class="block">
-        <Heading title="Mmm, cookies" :size="2"/>
-        <p>If you're somehow interested, here are all of the cookies that are used across the website.</p>
-        <VueTable :headers="table.headers" :data="table.data"/>
-        <Disclaimer
-          text="Whenever I write some code that contains functionality that can create cookies, this table will be updated."
+      <section class="section">
+        <Heading :title="getCookieHeading.title" :size="getCookieHeading.size" />
+        <RichText :article="getCookieText" />
+        <VueTable
+          :label="getCookieTable.label"
+          :headers="getCookieTable.headers"
+          :rows="getCookieTable.rows"
         />
       </section>
     </div>
@@ -30,58 +19,53 @@
 </template>
 
 <page-query>
-  query Privacy {
-    allContentfulPage (
-      filter: {
-        id: {
-          in: "3JNGhUtTBl4dnSu7I0oqKd"
-        }
-      }
-    ){
-      edges {
-        node {
-          title
-          description
+query Privacy {
+  allContentfulPage(filter: { id: { in: "3JNGhUtTBl4dnSu7I0oqKd" } }) {
+    edges {
+      node {
+        title
+        description
+        layout {
+          ... on ContentfulHeading {
+            title
+            size
+          }
+          ... on ContentfulRichText {
+            name
+            article
+          }
+          ... on ContentfulTable {
+            name
+            header {
+              data {
+                data
+              }
+            }
+            rows {
+              data {
+                data
+                isNumeric
+              }
+            }
+          }
         }
       }
     }
   }
+}
 </page-query>
 
 <script>
-import Heading from "../components/generic/Heading";
-import Notice from "../components/generic/Notice";
-import Link from "../components/generic/Link";
-import VueTable from "../components/generic/VueTable";
-import Disclaimer from "../components/generic/Disclaimer";
+import Heading from "../components/heading/Heading";
+import VueTable from "../components/vueTable/VueTable";
+import RichText from "../components/richText/RichText";
 
 export default {
   name: "Privacy",
   components: {
     Heading,
-    Notice,
-    Link,
     VueTable,
-    Disclaimer
-  },
-  data() {
-    return {
-      table: {
-        headers: ["Cookie", "Name", "Information"],
-        data: [
-          [
-            "Google Analytics",
-            "_ga, _gat, _gid",
-            "Your standard Google Analytics cookies that track stuff like page hits, clicks and events."
-          ],
-          [
-            "Cookie Consent",
-            "cookie_consent",
-            "If you decide to give your consent I create this cookie so I know if I have permission to create other cookies. If you decline a session cookie is created instead."
-          ]
-        ]
-      }
-    };
+    RichText
   },
   computed: {
     getPageTitle() {
@@ -93,6 +77,45 @@ export default {
       return this.$page.allContentfulPage.edges[0].node.description
         ? this.$page.allContentfulPage.edges[0].node.description
         : "";
+    },
+    getPrivacyHeading() {
+      return this.$page.allContentfulPage.edges[0].node.layout[0].title
+        ? this.$page.allContentfulPage.edges[0].node.layout[0].title
+        : "";
+    },
+    getPrivacyText() {
+      return this.$page.allContentfulPage.edges[0].node.layout[1].name ===
+        "Privacy introduction" &&
+        this.$page.allContentfulPage.edges[0].node.layout[1].article
+        ? this.$page.allContentfulPage.edges[0].node.layout[1].article
+        : {};
+    },
+    getCookieHeading() {
+      return this.$page.allContentfulPage.edges[0].node.layout[2].title &&
+        this.$page.allContentfulPage.edges[0].node.layout[2].size
+        ? {
+            title: this.$page.allContentfulPage.edges[0].node.layout[2].title,
+            size: this.$page.allContentfulPage.edges[0].node.layout[2].size
+          }
+        : {};
+    },
+    getCookieText() {
+      return this.$page.allContentfulPage.edges[0].node.layout[3].name ===
+        "Cookie description" &&
+        this.$page.allContentfulPage.edges[0].node.layout[3].article
+        ? this.$page.allContentfulPage.edges[0].node.layout[3].article
+        : {};
+    },
+    getCookieTable() {
+      return this.$page.allContentfulPage.edges[0].node.layout[4].name ===
+        "Cookie table" && this.$page.allContentfulPage.edges[0].node.layout[4]
+        ? {
+            label: this.$page.allContentfulPage.edges[0].node.layout[4].name,
+            headers: this.$page.allContentfulPage.edges[0].node.layout[4].header
+              .data,
+            rows: this.$page.allContentfulPage.edges[0].node.layout[4].rows
+          }
+        : {};
     }
   },
   metaInfo() {
@@ -115,9 +138,10 @@ export default {
 
 .privacy {
   @extend .wrapperPadding;
+  margin: 1em auto;
 
-  .block {
-    margin: 1em 0;
+  .section {
+    @extend .sectionSpacing;
   }
 }
 </style>

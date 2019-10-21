@@ -1,4 +1,4 @@
 module.exports = function (api) {
-  api.loadSource(store => {
-  })
-}
+  api.loadSource((store) => {
+  });
+};
