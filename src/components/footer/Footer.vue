@@ -41,7 +41,7 @@ export default {
 @import "../../assets/colours.scss";
 
 .footer {
-  background-color: $darkGray;
+  background-color: $mdc-theme-s-dark;
   padding: 1em;
 
   .links {

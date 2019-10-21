@@ -76,7 +76,7 @@ export default {
   .caption {
     font-size: 0.875em;
     line-height: 1.5;
-    background: $blue;
+    background: $mdc-theme-primary;
     color: $white;
     padding: 1em;
   }

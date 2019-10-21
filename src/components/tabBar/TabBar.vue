@@ -76,7 +76,6 @@ export default {
 <style lang="scss" scoped>
 @import "~@material/tab-bar/mdc-tab-bar";
 @import "~@material/tab-scroller/mdc-tab-scroller";
-@import "../../assets/global.scss";
 
 .tab-content {
   overflow: hidden;
