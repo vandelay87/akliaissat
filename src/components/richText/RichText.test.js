@@ -2,36 +2,36 @@ import { shallowMount } from '@vue/test-utils';
 import RichText from './RichText.vue';
 
 const articleStub = {
-  'data': {},
+  data: {},
   content: [{
     data: {},
     content: [{
-      'data': {},
-      marks: [],
-      'value': 'Dignissimos ducimus qui',
-      'nodeType': 'text',
-    }],
-    'nodeType': 'heading-2',
-  }, {
-    'data': {},
-    'content': [{
       data: {},
-      'marks': [],
+      marks: [],
+      value: 'Dignissimos ducimus qui',
+      nodeType: 'text',
+    }],
+    nodeType: 'heading-2',
+  }, {
+    data: {},
+    content: [{
+      data: {},
+      marks: [],
       value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
-      'nodeType': 'text',
+      nodeType: 'text',
     }],
     nodeType: 'paragraph',
   }, {
-    'data': {},
-    'content': [{
+    data: {},
+    content: [{
       data: {},
-      'marks': [],
+      marks: [],
       value: 'At vero eos el accusamus et iusto odio dignissimos ducimus qui blanditiis.',
-      'nodeType': 'text',
+      nodeType: 'text',
     }],
-    'nodeType': 'paragraph',
+    nodeType: 'paragraph',
   }],
-  'nodeType': 'document',
+  nodeType: 'document',
 };
 
 describe('RichText.vue', () => {

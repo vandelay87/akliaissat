@@ -1,5 +1,6 @@
 const isProd = process.env.NODE_ENV === 'production';
 const path = require('path');
+// eslint-disable-next-line import/no-extraneous-dependencies
 const glob = require('glob');
 
 module.exports = {
