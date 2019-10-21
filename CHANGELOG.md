@@ -3,7 +3,6 @@
 All notable changes to this project will be documented in this file.
 
 ## [0.2.0] - 2019-10-21
-
 ### Added
 
 - Card(s), RichText, TabBar and TopAppBar components.
@@ -24,7 +23,6 @@ All notable changes to this project will be documented in this file.
 - gridsome.server.js.
 
 ## [0.1.0] - 2019-04-14
-
 ### Added
 
 - Components.
