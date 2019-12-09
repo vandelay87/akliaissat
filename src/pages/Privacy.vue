@@ -56,9 +56,9 @@ query Privacy {
 </page-query>
 
 <script>
-import Heading from "../components/heading/Heading";
-import VueTable from "../components/vueTable/VueTable";
-import RichText from "../components/richText/RichText";
+import Heading from "~/components/heading/Heading";
+import VueTable from "~/components/vueTable/VueTable";
+import RichText from "~/components/richText/RichText";
 
 export default {
   name: "Privacy",
