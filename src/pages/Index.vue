@@ -71,10 +71,10 @@ query Index {
 </page-query>
 
 <script>
-import Heading from "../components/heading/Heading";
-import RichText from "../components/richText/RichText";
-import Cards from "../components/cards/Cards";
-import TabBar from "../components/tabBar/TabBar";
+import Heading from "~/components/heading/Heading";
+import RichText from "~/components/richText/RichText";
+import Cards from "~/components/cards/Cards";
+import TabBar from "~/components/tabBar/TabBar";
 
 export default {
   name: "Index",

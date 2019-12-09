@@ -25,11 +25,11 @@
     "@material/theme": "^3.1.0",
     "@material/top-app-bar": "^3.2.0",
     "@material/typography": "^1.0.0",
-    "gridsome": "^0.7.2"
+    "gridsome": "^0.7.2",
+    "vue": "^2.6.10"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.4.5",
     "@storybook/theming": "^5.1.11",
     "@storybook/vue": "^5.0.11",
@@ -59,6 +59,7 @@
     "gridsome/vue-router": "3.0.2"
   },
   "jest": {
+    "verbose": true,
     "moduleFileExtensions": [
       "js",
       "json",
