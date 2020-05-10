@@ -1,3 +1,4 @@
+# DEPRECATED
 # akli.dev
 
 A personal website made by Akli Aissat about web development and programming.
