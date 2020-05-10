@@ -1,4 +1,6 @@
 # DEPRECATED
+Please view the new repository here: https://github.com/vandelay87/akli
+
 # akli.dev
 
 A personal website made by Akli Aissat about web development and programming.
